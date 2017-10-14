@@ -1,0 +1,13 @@
+#content {
+  margin: 0 auto;
+  width: 600px;
+  text-align: justify;
+}
+
+.centerit {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}

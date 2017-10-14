@@ -1,0 +1,51 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-devices
+  h1.hideondisconnect#section Devices Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 General
+      table.config
+        tr.even
+          td
+            span.tleft IP address of stage device network
+            span.tright: input(style='padding-left: 3px;')#ec-devicesIpBlock
+        tr.odd
+          td
+            span.tleft Number of seconds for device response when scanning
+            span.tright: input(style='padding-left: 3px;')#ec-devicesScanTime
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Listen for Bonjour device announcements
+            span(style='margin-top: 2px;').tright: div#ex-devicesBonjour
+
+      h3 Polling
+      table.config
+        tr.even
+          td
+            span.tleft Number of seconds between successful poll
+            span.tright: input(style='padding-left: 3px;')#ec-devicesAutopollSuccess
+        tr.odd
+          td
+            span.tleft Number of seconds to retry after failed poll
+            span.tright: input(style='padding-left: 3px;')#ec-devicesAutopollFailed
+        tr.even
+          td
+            span.tleft Number of seconds minimum delay between any two polls
+            span.tright: input(style='padding-left: 3px;')#ec-devicesAutopollBackToBack
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Save match to database after each auto-poll
+            span(style='margin-top: 2px;').tright: div#ex-devicesAutopollSave
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

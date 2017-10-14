@@ -1,0 +1,216 @@
+extends /layout_jq
+
+mixin cbItem(did, text)
+  li
+    div(id='sc_sh_#{did}').cbItem
+    =text
+
+block content
+  div#help-page-id edit-competitors-uspsa
+  h1.hideondisconnect#section Add/Edit Competitors
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#competitorsGrid
+
+  div(style='display: none;').hideondisconnectex#popupEdit
+    div Window Title
+    div(style='overflow: hidden;')
+      table
+        tr
+          td.tlabel Last Name:
+          td.tinput: input(style='padding-left: 3px;')#ec-sh-ln
+          td.tspace
+          td.tlabel First Name:
+          td.tinput: input(style='padding-left: 3px;')#ec-sh-fn
+          td.tspace
+          td.tlabel USPSA:
+          td.tinput
+            div(style='float: left;')#ec-sh-id-prefix
+            input(style='padding-left: 3px; float: left; margin-left: 4px;')#ec-sh-id-num
+        tr
+          td.tlabel Division:
+          td.tinput: div#ec-sh-dvp
+          td.tspace
+          td.tlabel Power Factor:
+          td.tinput: div#ec-sh-pf
+          td.tspace
+          td.tlabel Class:
+          td.tinput: div#ec-sh-grd
+        tr
+          td.tlabel Squad:
+          td.tinput: div#ec-sh-sqd
+          td.tspace
+          td(hide-if-ucl).tlabel Age:
+          td(hide-if-ucl).tinput: div#ec-sh-age
+          td(hide-if-ucl).tspace
+          td(hide-if-ucl).tlabel Gender:
+          td(hide-if-ucl).tinput: div#ec-sh-gen
+          td(show-if-ucl).tlabel Caetgories:
+          td(show-if-ucl).tinput: div#ec-sh-ctgs
+        tr(hide-if-ucl)
+          td.tlabel Law:
+          td.tinput: div#ec-sh-law
+          td.tspace
+          td.tlabel Military:
+          td.tinput: div#ec-sh-mil
+          td.tspace
+          td.tlabel Foreign:
+          td.tinput: div#ec-sh-frn
+        tr
+          td.tlabel Staff:
+          td.tinput: div#ec-sh-staff
+          td.tspace
+          td.tlabel Paid:
+          td.tinput: div#ec-sh-paid
+          td.tspace
+          td.tlabel Present:
+          td.tinput: div#ec-sh-here
+        tr
+          td.tlabel Walk-On:
+          td.tinput: div#ec-sh-wlk
+          td.tspace
+          td.tlabel DQ:
+          td.tinput: div#ec-sh-dq
+          td.tspace
+          td.tlabel Deleted:
+          td.tinput: div#ec-sh-del
+        tr
+          td.tlabel EZWS #:
+          td.tinput: input(style='padding-left: 3px;')#ec-sh-num
+          td.tspace
+          td.tlabel Log To Email:
+          td.tinput: div#ec-sh-lge
+          td.tspace
+          td.tlabel Log To SMS:
+          td.tinput: div#ec-sh-lgp
+        tr
+          td.tlabel Phone:
+          td.tinput: div(style='padding-left: 3px;')#ec-sh-ph
+          td.tspace
+          td.tlabel Email:
+          td(colspan=4).tinput: input(style='padding-left: 3px;')#ec-sh-eml
+        tr
+          td.tlabel Address 1:
+          td.tinput: input(style='padding-left: 3px;')#ec-sh-addr1
+          td.tspace
+          td.tlabel Address 2:
+          td(colspan=4).tinput: input(style='padding-left: 3px;')#ec-sh-addr2
+          td.tspace
+        tr
+          td.tlabel City:
+          td.tinput: input(style='padding-left: 3px;')#ec-sh-city
+          td.tspace
+          td.tlabel State:
+          td.tinput: div#ec-sh-st
+          td.tspace
+          td.tlabel ZIP Code:
+          td.tinput: div(style='padding-left: 3px;')#ec-sh-zipcode
+          td.tspace
+
+      p
+      div(style='float: right')
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-cancelButton Cancel
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+  div(style='display: none;').hideondisconnectex#popupSquads
+    div Squad Distribution
+    div
+      div(style='float: left;')#sp-tree
+      div(style='display: none;')#sp-noCompetitors
+        p(style='text-align: center;') No squads with competitors!
+
+  div(style='display: none;').hideondisconnectex#confirmResequenceWindow
+    div(style='padding-top: 1px; padding-bottom: 0px;')
+      img(style='width: 24px; height: 24px; vertical-align: middle;' src='/images/red-triangle.png')
+      span(style='margin-left: 5px; position: relative; top: 2px;') Confirm Resequence
+    div
+      div
+        | It appears there are already EZWS numbers assigned, and
+        | they're not in sequential order. Selecting 'OK' will cause
+        | these to be changed, possibly making it impossible to import
+        | scores into EzWinScore.
+      div
+        p
+      div
+        | Are you <b>SURE</b> you want to do this?
+      div
+        div(style='float: right; margin-top: 15px;')
+          button(style='margin-right: 10px;')#buttonResequenceOK OK
+          button#buttonResequenceCancel Cancel
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li#contextEditCompetitor Edit This Competitor (#<span id='contextEditCompetitorNum'>0</span>)
+      li#contextAddCompetitor Add New Competitor (#<span id='contextAddCompetitorNum'>0</span>)
+
+      li#contextNormalizeCase Normalize Name Case
+        ul(style='width: 200px;')
+          li#contextNormalizeCaseThis Normalize This Competitor
+          li#contextNormalizeCaseAll Normalize ALL Competitors
+
+      li#contextDepersonalize Depersonalize
+        ul(style='width: 130px;')
+          li#contextDepersonalizeThis This Competitor
+          li#contextDepersonalizeAll ALL Competitors
+
+      li#contextStripBadMembershipNumber Strip Bad Membership Numbers
+        ul(style='width: 130px;')
+          li#contextStripBadMembershipNumberThis This Competitor
+          li#contextStripBadMembershipNumberAll ALL Competitors
+
+      li EZWS #
+        ul(style='width: 120px;')
+         li#contextEzwsSet Set to <span id='contextEzwsSetNum'>0</span>
+         li#contextEzwsResequence Resequence All
+         li#contextEzwsReset Reset all to -1
+
+      li Print List (Labels)
+        ul(style='width: 250px;')
+          li#contextPrintListAdd Add This Competitor (<span id='contextPrintCountNum'>0</span> in queue)
+          li#contextPrintListRemove Remove This Competitor
+          li#contextPrintListClear Remove ALL Competitors
+
+      // li(item-disabled='true')#contextObliterate Obliterate This Competitor
+
+      li Switch View
+        ul(style='width: 60px;')
+          li#contextSwitchPaged Paged
+          li#contextSwitchScroll Scroll
+
+      li Edit Mode
+        ul(style='width: 60px;')
+          li#contextEditModeInline Inline
+          li#contextEditModePopup Popup
+
+      li Category View
+        ul(style='width: 90px;')
+          li#contextCategoryViewTraditional Traditional
+          li#contextCategoryViewPractiscore PractiScore
+          li#contextCategoryViewBoth Both
+
+      li Show/Hide Columns
+        ul
+          +cbItem('pos', '#')
+          +cbItem('ln', 'Last Name')
+          +cbItem('fn', 'First Name')
+          +cbItem('id', 'USPSA')
+          +cbItem('dvp_fmt', 'Division')
+          +cbItem('pf_fmt', 'Power Factor')
+          +cbItem('grd', 'Class')
+          +cbItem('sqd', 'Squad')
+          +cbItem('ctgs_fmt', 'Categories')
+          +cbItem('age_fmt', 'Age')
+          +cbItem('gen_fmt', 'Female')
+          +cbItem('law_fmt', 'Law')
+          +cbItem('mil_fmt', 'Military')
+          +cbItem('frn_fmt', 'Foreign')
+          +cbItem('eml', 'Email')
+          +cbItem('ph', 'Phone')
+          +cbItem('st', 'State')
+          +cbItem('num', 'EZWS #')
+          +cbItem('wlk_fmt', 'Walk-On')
+          +cbItem('dq_fmt', 'DQ')
+          +cbItem('del_fmt', 'Deleted')
+          +cbItem('print_fmt', 'Print')

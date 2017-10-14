@@ -1,0 +1,32 @@
+#content {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#msg {
+  text-align: center;
+}
+
+#squads {
+  width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.squadLabel {
+}
+
+#bottom {
+  clear: both;
+}
+
+.ulLeft {
+  width: 400px;
+  float: left;
+}
+
+.ulRight {
+  width: 400px;
+  float: right;
+}

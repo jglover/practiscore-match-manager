@@ -1,0 +1,49 @@
+div(style='display: none;' match-level='l4')
+  h3 Divisions
+  table.settings
+    tr.even
+      td
+        span(style='margin-top: 2px;').tleft Entries required per division
+        span.tright: div(controltype='numberinput' numberinput-default='10' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l4-division-minimum-entries
+    tr.odd
+      td
+        span(style='margin-top: -1px;').tleft Print division awards
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-l4-print-division
+
+  h3 Classes
+  table.settings
+    tr.even
+      td
+        span(style='margin-top: -1px;').tleft Print class awards
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-l4-print-class
+    tr(no-class-hide).odd
+      td
+        span(style='margin-top: 2px;').tleft Entries required per class
+        span.tright: div(controltype='numberinput' numberinput-default='10' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l4-class-minimum-entries
+    tr(no-class-hide).even
+      td
+        span(style='margin-top: 2px;').tleft Award for every Nth position
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l4-class-award-step
+    tr(no-class-hide).odd
+      td
+        span(style='margin-top: 2px;').tleft Maximum awards per class
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l4-class-maximum-awards
+
+  h3 Categories
+  table.settings
+    tr.even
+      td
+        span(style='margin-top: -1px;').tleft Print category awards
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-l4-print-category
+    tr(no-category-hide).odd
+      td
+        span(style='margin-top: 2px;').tleft Entries required per category
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l4-category-minimum-entries
+    tr(no-category-hide).even
+      td
+        span(style='margin-top: 2px;').tleft Award for every Nth position
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l4-category-award-step
+    tr(no-category-hide).odd
+      td
+        span(style='margin-top: 2px;').tleft Maximum awards per category
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l4-category-maximum-awards

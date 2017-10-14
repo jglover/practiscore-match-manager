@@ -1,0 +1,18 @@
+#content {
+  text-align: center;
+}
+
+#status {
+}
+
+#results {
+  margin: 0 auto;
+  text-align: left;
+  width: 600px;
+}
+
+#help {
+  margin: 0 auto;
+  text-align: justify;
+  width: 600px;
+}

@@ -1,0 +1,54 @@
+extends /layout
+
+append head
+  script(src='/javascripts/pmelib/common.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+
+block content
+  div#help-page-id manage-progress
+  h1.hideondisconnect#section Match Progress
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    div#progress
+
+  div#popup
+    div#popup-content
+      div#popup-content-complete-header Complete:
+      div#popup-content-complete
+      div#popup-content-dnf-header DNF:
+      div#popup-content-dnf
+      div#popup-content-missing-header Missing:
+      div#popup-content-missing
+  div(style='display:none')#popupDeleted
+    div#popup-content-deleted
+      table#popup-content-table-deleted.popup-content-table-css
+        thead
+          tr
+            th Number
+            th Competitor
+            th USPSA
+        tbody
+      br
+  div(style='display:none')#popupDQ
+    div#popup-content-dq
+      table#popup-content-table-dq.popup-content-table-css
+        thead
+          tr
+            th Number
+            th Competitor
+            th USPSA
+            th Date/Time
+        tbody
+      br
+  div(style='display:none')#popupZerotime
+    div#popup-content-zerotime
+      table#popup-content-table-zerotime.popup-content-table-css
+        thead
+          tr
+            th Number
+            th Competitor
+            th USPSA
+            th Stage(s)
+        tbody
+      br

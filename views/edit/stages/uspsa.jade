@@ -1,0 +1,44 @@
+extends /layout
+
+block content
+  div#help-page-id edit-stages-uspsa
+  h1.hideondisconnect#section Add/Edit Stages
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    table(style='display:none')#stageTable
+      thead
+        tr
+          th.col-select Select
+          th.col-stagenum Stage #
+          th.col-stagename Stage Name
+          th.col-scoring Scoring
+          th.col-strings Strings
+          th.col-classifier Classifier
+          th.col-noshoots No-Shoots
+          th.col-steel Steel
+          th.col-paper Paper
+          th.col-type Type
+          th.col-npms NPMs
+          th.col-hits Hits
+          th.col-points Points
+      tbody#stageTbody
+
+    p#stageMessage
+
+    div#buttonDiv
+      button#addButton Add Stage
+      div.buttonSpacer
+      button(disabled='disabled')#editButton Edit Stage
+
+    div(style='display:none')#popup
+      div#popup-content
+        p#popup-content-stagehits
+        table#popup-content-table.popup-content-table-css
+          thead
+            tr
+              th Target #
+              th Hits
+              th NPMs
+          tbody
+        br

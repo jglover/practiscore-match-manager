@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta(http-equiv='content-type', content='text/html;charset=utf-8')
+    title=title
+    link(rel='stylesheet', href='/stylesheets' + path + '.css')
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/libs/jquery.min.js')
+    script(src='/javascripts/pmelib/common.js')
+    script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+    script(src='/javascripts' + path + '.js')
+    script(src='/javascripts/kiosk/kiosk.js')
+
+  body
+
+    include /disconnect
+
+    div#content
+      div#images
+        img(src="", class="Absolute-Center is-Image")#image

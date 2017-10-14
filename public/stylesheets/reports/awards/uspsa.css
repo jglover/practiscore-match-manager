@@ -1,0 +1,272 @@
+@font-face {
+	font-family: 'Conv_Yellowtail-Regular';
+	src: url('/fonts/Yellowtail-Regular.eot');
+	src: local('☺'), 
+       url('/fonts/Yellowtail-Regular.woff') format('woff'), 
+       url('/fonts/Yellowtail-Regular.ttf') format('truetype'), 
+       url('/fonts/Yellowtail-Regular.svg#yellowtail_regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+body {
+  font-family: Arial,Sans-Serif;
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#awards {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  width: 600px;
+  margin: 0 auto 5px;
+  border-bottom: 1px solid #666;
+  padding: 0;
+  text-align: left;
+}
+
+table.settings {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 550px;
+}
+
+table.settings tr, table.settings td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 560px;
+}
+
+table.settings tr.even {
+  background: #fdfdfd;
+}
+
+table.settings tr.odd {
+  background: #f3f3f3;
+}
+
+table.settings td {
+  height: 27px;
+  width: 600px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}
+
+.tinput {
+  text-align: left;
+}
+
+/*
+*/
+pre.cgc {
+  text-align: left;
+}
+
+div.cgc {
+  margin: 0 auto;
+  text-align: left;
+  font-family: Verdana;
+}
+
+table.cgc {
+  border-collapse: collapse;
+  display: inline-block;
+}
+
+table.cgc th {
+  background-color: yellow;
+}
+
+table.cgc td.prize {
+  text-align: center;
+}
+
+/*
+**  Tables have thin lines, are centered on the page, and the cells are
+**  padded to make them less crowded.
+*/
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/*
+**
+*/
+.nobreak {
+  page-break-inside: avoid;
+}
+
+.results table {
+  page-break-inside: avoid;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.results th, td {
+  border: 1px solid black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/*
+**  Used for formatting the statistics tables. Overall width is 300px, and
+**  specifiers for left, center and right columns
+.stats {
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+.stats_l {
+  width: 150px;
+  text-align: center;
+}
+
+.stats_c {
+  text-align: right;
+  padding-right: 13px;
+}
+
+.stats_r {
+  text-align: right;
+  padding-right: 27px;
+}
+*/
+
+/*
+**  Table of contents table
+*/
+.toc {
+  border: none;
+  text-align: center;
+}
+
+.toc td {
+  padding: 0px;
+  border: none;
+}
+
+/*
+**  Configuration table
+*/
+.config {
+  border: none;
+}
+
+.config td {
+  vertical-align: top;
+  padding: 2px;
+  border: none;
+}
+
+.config_l { text-align: right; }
+.config_r { text-align: left; }
+
+/*
+**  CSS for tables containing competitor info. Resuls with only one
+**  competitor don't use the 'Place' column, while results that do
+**  have placement do use the 'Place' column.
+*/
+.results_place    { }
+.results_name     { min-width: 200px; }
+.results_state    { }
+.results_class    { }
+.results_age      { }
+.results_fem      { }
+.results_mil      { }
+.results_law      { }
+.results_division { min-width: 100px; }
+.results_category { min-width: 100px; }
+
+/*
+**  No entries text is in the next size up font
+*/
+.noentries { font-size: larger; }
+
+/*
+**  Title for each section
+*/
+.title { font-weight: bold; }
+
+/*
+**
+*/
+#errorMessage {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/*
+**  Formatting for envelopes
+*/
+.envelopedivision {
+  text-anchor: middle;
+  font-weight: normal; 
+  font-size:  40pt; 
+  font-family: 'Conv_YellowTail-Regular',Sans-Serif; 
+  writing-mode: tb; 
+  color: black;
+}
+
+.envelopeclass {
+  text-anchor: middle;
+  font-weight: normal; 
+  font-size:  40pt; 
+  font-family: 'Conv_YellowTail-Regular',Sans-Serif; 
+  writing-mode: tb; 
+  color: black;
+}
+
+.envelopeshooter {
+  text-anchor: middle;
+  font-weight: normal; 
+  font-size:  100pt; 
+  font-family: 'Conv_YellowTail-Regular',Sans-Serif; 
+  writing-mode: tb; 
+  color: black;
+}

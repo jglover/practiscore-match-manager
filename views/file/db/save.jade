@@ -1,0 +1,39 @@
+extends /layout_jq
+
+block content
+  div#help-page-id file-db-save
+  h1.hideondisconnect#section Save Match To Database
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    p.
+      Clicking 'Save Match' will replace the existing copy, if one exists. If the match does
+      does not already exist, it will be saved under the current match name and UUID (*1).
+
+    div.centerit
+      button(controltype='button' button-width='105')#buttonSave Save Match
+
+    p.centerit#saveMessage
+
+    p.
+      If this match already exists, and you would like to save it as a NEW copy, click the
+      'Save As New' button. This will save the match under the same name, but generate a
+      new UUID (*1). The 'Last Modified' time will also be updated to help distinguish between
+      the original and this new copy. The currently loaded match will use the NEW UUID.
+
+    div.centerit
+      button(controltype='button' button-width='105')#buttonSaveAsNew Save As New
+
+    p.centerit#savenewMessage
+
+    p.
+      *1 Each match has a unique identifier that's assigned when the match is first created,
+      called a Universal Unique IDentifier, or UUID. PractiScore uses the UUID when syncing,
+      uploading results, and in several other places. It's because of this UUID that two (or
+      more) matches can all have the same name, but still remain distinct.
+
+    p.
+      Although PractScore 'knows' the matches are different because of the UUIDs being unique,
+      the user (that's us) only knows it by the match name, and if two matches have the same
+      name, this can result in confusion and unexpected results. It is <b>strongly</b> recommended
+      that match names are kept unique to maintain your sanity.

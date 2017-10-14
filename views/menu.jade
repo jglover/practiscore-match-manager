@@ -1,0 +1,131 @@
+div.hideondisconnect.no-print#jqxMenu
+  input(type='hidden' value="#{pmmmatchtype}")#menu_matchtype
+  ul
+    li File
+      ul
+        li: a(href='/file/create') Create New Match
+        li Database
+          ul(style='width: 110px;')
+            li: a(href='/file/db/load') Load Match
+            li: a(href='/file/db/save') Save Match
+        li File
+          ul(style='width: 130px;')
+            li: a(href='/file/file/load') Load Match
+            li: a(href='/file/file/save') Save Match
+            li: a(href='/file/file/merge') Merge Fragment
+            li: a(href='/file/file/combine') Combine Match
+        li Download
+          ul(style='width: 160px;')
+            li: a(href='/file/download/cpc') clubs.practiscore.com
+            li: a(href='/file/download/ssu') SquadSignup.com
+        li Import
+          ul(style='width: 140px;')
+            li(disable-menu-item) EzWinScore
+              ul(style='width: 100px;')
+                li Registration
+                li Squadding
+                li Scores
+                li: a(href='/file/imexport/ezws/import_db') Database
+            li(disable-menu-item) PractiScore
+              ul(style='width: 100px;')
+                li CSV File
+            li Shoot'n-Score-It
+              ul(style='width: 100px;')
+                li: a(href='/file/imexport/ssi/import') Registration
+        li Export
+          ul(style='width: 140px;')
+            li EzWinScore
+              ul(style='width: 120px;')
+                li(disable-menu-item) Registration
+                li(disable-menu-item) Squadding
+                li(disable-menu-item) Stages
+                li(disable-menu-item) Scores
+                li: a(href='/file/imexport/ezws/export_combined') Combined
+                li(disable-menu-item) Match Results
+                li: a(href='/file/imexport/ezws/export_db') Database
+            li(disable-menu-item) Shoot'n-Score-It
+              ul(style='width: 100px;')
+                li: a(href='/file/imexport/ssi/export') Registration
+            li(disable-menu-item) CSV File
+              ul(style='width: 100px;')
+                li Registration
+                li Scores
+    li Edit/View
+      ul(style='width: 100px;')
+        li(matchtype='tp tpp'): a(href='/edit/bonuses') Bonuses
+        li: a(href='/edit/categories') Categories
+        li: a(href='/edit/classes') Classes
+        li: a(href='/edit/competitors') Competitors
+        li: a(href='/edit/divisions') Divisions
+        li: a(href='/edit/history') History
+        li: a(href='/edit/logs') Logs
+        li: a(href='/edit/match') Match
+        li(matchtype='sc tp tpp'): a(href='/edit/penalties') Penalties
+        li: a(href='/edit/scores') Scores
+        li(matchtype='uspsa'): a(href='/edit/scores2') Scores Test
+        li: a(href='/edit/squads') Squads
+        li: a(href='/edit/stages') Stages
+    li Manage
+      ul(style='width: 160px;')
+        li: a(href='/manage/checkin') Check-In
+        li: a(href='/manage/devices') Devices
+        li: a(href='/manage/progress') Match Progress
+        li(matchtype='uspsa') USPSA.org
+          ul(style='width:180px')
+            li: a(href='/manage/uspsa/classifications') Update Classifications
+            li: a(href='/manage/uspsa/states') Update States
+            li: a(href='/manage/uspsa/rolist') Update RO/CRO List
+            li: a(href='/manage/uspsa/verification') Competitor Verification
+            li(disable-menu-item): a(href='/manage/uspsa/scores') Match Scores
+            li: a(href='/manage/uspsa/activity') Activity Report
+        li(matchtype='sc') SteelChallenge.com
+          ul(style='width:170px')
+            li: a(href='/manage/sc/classifications') Update Classifications
+    li Reports
+      ul(style='width: 95px;')
+        li: a(href='/reports/awards') Awards
+        li: a(href='/reports/ccr') CCR Cards
+        li: a(href='/reports/labels') Labels
+        li: a(href='/reports/projection') Projection
+        li: a(href='/reports/squad') Squad
+        li(matchtype='uspsa'): a(href='/reports/squadros') Squad ROs
+        li: a(href='/reports/stats') Statistics
+        li: a(href='/reports/waiver') Waiver
+    li Utilities
+      ul(style='width: 130px;')
+        li: a(href='/utils/explore') JSON Explorer
+        li: a(href='/utils/stringify') JSON Stringify
+        li: a(href='/utils/jcheck') JSON Checker
+        li: a(href='/utils/memory') Memory Usage
+        li: a(href='/utils/jcw') JCW Stuff
+        // li: a(href='/utils/test') Test Stuff
+    li Config
+      ul(style='width: 100px;')
+        li: a(href='/config/devices') Devices
+        li: a(href='/config/download') Download
+        li: a(href='/config/file') Files
+        li: a(href='/config/kiosk') Kiosk
+        li: a(href='/config/match') Match
+        li: a(href='/config/practiprint') PractiPrint
+        li: a(href='/config/progress') Progress
+        li: a(href='/config/server') Server
+        li: a(href='/config/startup') Startup
+        li: a(href='/config/ui') UI
+        li: a(href='/config/debug') Debug
+    li Kiosk
+      ul(style='width: 120px;')
+        li: a(href='/kiosk/progress?kiosk=1') Match Progress
+        li: a(href='/kiosk/scores') Scores
+        li: a(href='/kiosk/vendor') Vendors
+        li(disable-menu-item): a(href='/kiosk/scores2') Scores Test
+    li#jqxMenuHelp Help
+      ul(style='width: 150px;')
+        li#jqxMenuHelpPage Help with this page
+        li: a(href='/help/help' target='_blank') Help index
+        li: a(href='/help/system') System info
+        li: a(href='/help/about') About
+    li#jqxMenuAction Empty
+
+div.hideondisconnectex.no-print#jqxHelpWindow
+  div#jqxWindowHelpHeader
+  div(style='overflow: hidden;')#jqxWindowHelpContent

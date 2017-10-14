@@ -1,0 +1,193 @@
+extends /layout
+
+append head
+  script(src='/javascripts/pmelib/validator.js')
+
+block content
+  div#help-page-id edit-competitors-tpp
+  h1#section Add/Edit Competitors
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    div#competitorsTableDiv
+    p#competitorMessage
+
+  div(style='display:none', title='Edit Competitor')#popup-dialog
+    div#popup-content
+      form#popup-form
+        table#popup-table
+          tr
+            td.tlabel First Name:
+            td.tinput
+              input(type='text', format='fname', size=15, maxlength=15, autocomplete=off)#ecFirstName
+            td.tspace
+            td.tlabel Last Name:
+            td.tinput
+              input(type='text', format='lname', size=20, maxlength=20, autocomplete=off)#ecLastName
+            td.tspace
+            td.tlabel Membership #:
+            td.tinput
+              input(type='text', format='membership', size=12, maxlength=12, autocomplete=off)#ecMembership
+          tr
+            td.tlabel Division:
+            td.tinput
+              select#ecDivision
+                option(value='LTD') Limited
+                option(value='LTDTEN') Limited-10
+                option(value='OPEN') Open
+                option(value='PROD') Production
+                option(value='REV') Revolver
+                option(value='SS') Single Stack
+            td.tspace
+            td.tlabel Class:
+            td.tinput
+              select#ecClass
+                option(value='A') A
+                option(value='B') B
+                option(value='C') C
+                option(value='D') D
+                option(value='G') GM
+                option(value='M') M
+                option(value='U') U
+                option(value='X') X
+          tr
+            td.tlabel Gender:
+            td.tinput
+              select#ecGender
+                option(value='FEMALE') Female
+                option(value='MALE') Male
+            td.tspace
+            td.tlabel Age:
+            td.tinput
+              select#ecAge
+                option(value='ADULT') Adult
+                option(value='JUNIOR') Junior
+                option(value='SENIOR') Senior
+                option(value='SUPSNR') Super Senior
+            td.tspace
+            td.tlabel Squad:
+            td.tinput
+              input(type='text', format='integer', min=1, max=9999, size=4, maxlength=4, autocomplete=off)#ecSquad
+          tr
+            td.tlabel Military:
+            td.tinput
+              select#ecMilitary
+                option(value='NO') No
+                option(value='YES') Yes
+            td.tspace
+            td.tlabel Law:
+            td.tinput
+              select#ecLaw
+                option(value='NO') No
+                option(value='YES') Yes
+            td.tspace
+            td.tlabel Foreign:
+            td.tinput
+              select#ecForeign
+                option(value='NO') No
+                option(value='YES') Yes
+          tr
+            td.tlabel Deleted:
+            td.tinput
+              select#ecDeleted
+                option(value='NO') No
+                option(value='YES') Yes
+            td.tspace
+            td.tlabel DQ
+            td.tinput
+              select#ecDQ
+                option(value='NO') No
+                option(value='YES') Yes
+            td.tspace
+            td.tlabel Walk-On:
+            td.tinput
+              select#ecWalkon
+                option(value='NO') No
+                option(value='YES') Yes
+          tr
+            td.tlabel Phone:
+            td.tinput
+              input(type='text', format='phone', size=12, maxlength=12, autocomplete=off)#ecPhone
+            td.tspace
+            td.tlabel Email:
+            td(colspan=4).tinput
+              input(type='text', format='email', size=50, maxlength=50, autocomplete=off)#ecEmail
+          tr
+            td.tlabel Address 1:
+            td.tinput
+              input(type='text', format='address', size=30, maxlength=30, autocomplete=off)#ecAddr1
+            td.tspace
+            td.tlabel Address 2:
+            td(colspan=4).tinput
+              input(type='text', format='address', size=30, maxlength=30, autocomplete=off)#ecAddr2
+            td.tspace
+          tr
+            td.tlabel City:
+            td.tinput
+              input(type='text', format='city', size=30, maxlength=30, autocomplete=off)#ecCity
+            td.tspace
+            td.tlabel State:
+            td.tinput
+              select#ecState
+                option(value='')
+                option(value='AL') Alabama
+                option(value='AK') Alaska
+                option(value='AZ') Arizona
+                option(value='AR') Arkansas
+                option(value='CA') California
+                option(value='CO') Colorado
+                option(value='CT') Connecticut
+                option(value='DE') Delaware
+                option(value='FL') Florida
+                option(value='GA') Georgia
+                option(value='HI') Hawaii
+                option(value='ID') Idaho
+                option(value='IL') Illinois
+                option(value='IN') Indiana
+                option(value='IA') Iowa
+                option(value='KS') Kansas
+                option(value='KY') Kentucky
+                option(value='LA') Louisiana
+                option(value='ME') Maine
+                option(value='MD') Maryland
+                option(value='MA') Massachusetts
+                option(value='MI') Michigan
+                option(value='MN') Minnesota
+                option(value='MS') Mississippi
+                option(value='MO') Missouri
+                option(value='MT') Montana
+                option(value='NE') Nebraska
+                option(value='NV') Nevada
+                option(value='NH') New Hampshire
+                option(value='NJ') New Jersey
+                option(value='NM') New Mexico
+                option(value='NY') New York
+                option(value='NC') North Carolina
+                option(value='ND') North Dakota
+                option(value='OH') Ohio
+                option(value='OK') Oklahoma
+                option(value='OR') Oregon
+                option(value='PA') Pennsylvania
+                option(value='RI') Rhode Island
+                option(value='SC') South Carolina
+                option(value='SD') South Dakota
+                option(value='TN') Tennessee
+                option(value='TX') Texas
+                option(value='UT') Utah
+                option(value='VT') Vermont
+                option(value='VA') Virginia
+                option(value='WA') Washington
+                option(value='WV') West Virginia
+                option(value='WI') Wisconsin
+                option(value='WY') Wyoming
+                option(value='GU') Guam
+                option(value='PR') Puerto Rico
+                option(value='VI') Virgin Islands
+            td.tspace
+            td.tlabel ZIP Code:
+            td.tinput
+              input(type='text', format='zipcode', size=10, maxlength=10, autocomplete=off)#ecZipCode
+            td.tspace
+        input(type='submit', tabindex=-1, style='position:absolute; top:-1000px')
+      div(style='display:none; text-align:center; color:red')#popup-error-div
+        p#popup-error-p

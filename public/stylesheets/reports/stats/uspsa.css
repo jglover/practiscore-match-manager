@@ -1,0 +1,136 @@
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+body {
+  font-family: Arial,Sans-Serif;
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#statistics {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  width: 600px;
+  margin: 0 auto 5px;
+  border-bottom: 1px solid #666;
+  padding: 0;
+  text-align: left;
+}
+
+table.settings {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 550px;
+}
+
+table.settings tr, table.settings td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 560px;
+}
+
+table.settings tr.even {
+  background: #fdfdfd;
+}
+
+table.settings tr.odd {
+  background: #f3f3f3;
+}
+
+table.settings td {
+  height: 27px;
+  width: 600px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}
+
+.tinput {
+  text-align: left;
+}
+
+/*
+**
+*/
+table.stats {
+  width: 350px;
+}
+
+table.stats td.left {
+  text-align: left;
+}
+
+table.stats td.center {
+  text-align: right;
+}
+
+table.stats td.right {
+  text-align: right;
+}
+
+/*
+**  Tables have thin lines, are centered on the page, and the cells are
+**  padded to make them less crowded.
+*/
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table, th, td {
+  page-break-inside: avoid;
+  border: 1px solid black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/*
+**
+*/
+.nobreak {
+  page-break-inside: avoid;
+}
+
+/*
+**  Title for each section
+*/
+.title { font-weight: bold; }
+
+/*
+**
+*/
+#errorMessage {
+  margin-top: 50px;
+  text-align: center;
+}

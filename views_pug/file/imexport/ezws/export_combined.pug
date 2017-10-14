@@ -1,0 +1,26 @@
+extends /layout_jq
+
+block content
+  div#help-page-id file-imexport-ezws-exportcombined
+  h1.hideondisconnect#section Export Combined EzWinScore Match
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    p(style='text-align: justify;')
+      | This option will export the match into a set of files that are suitable
+      | for importing into EzWinScore. 
+    p(style='text-align: justify;')
+      | From the Setup->Registration menu option, select the 'Registration 
+      | Import' tab, and check the 'TSV' button under 'Input File Format', and 
+      | 'Yes' under 'Allow Reentries'. Click 'Import Registration', and select
+      | 'registration.txt' file.
+    p(style='text-align: justify;')
+      | To import the squadding information, from the Setup->Registration menu 
+      | tab, select the 'On Line Squadding' tab, then click the 'Import
+      | Squadding' button, and select the 'squads.txt' file.
+    p(style='text-align: justify; color: red;')
+      | Warning! EzWinScore requires that shooter numbers start at 1, and 
+      | increment from there. PMM is not checking that just yet, so do you need
+      | to go to Edit/View->Competitors and verify they're correct?
+    p
+    button#buttonExport Export

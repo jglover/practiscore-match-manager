@@ -1,0 +1,58 @@
+#content {
+  overflow: hidden;
+}
+
+#stagesGrid {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stage {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right: 2px;
+  margin-left: 4px;
+  margin-top: 0px;
+}
+
+.stageDel {
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+}
+
+.tlabel {
+  text-align: right;
+}
+
+.tspace {
+  padding-left: 4px;
+}
+
+.tinput {
+  text-align: left;
+}
+
+#stageMessage {
+  text-align: center;
+}
+
+#btncontainer {
+  overflow: hidden;
+  position: relative;
+  margin: 0px;
+  padding-top: 3px;
+}
+
+div#btncontainer .btndiv {
+  float: left;
+  margin-left: 5px;
+}
+
+div#btncontainer .btnspan {
+  margin-left: 4px;
+  position: relative;
+  top: 2px;
+}

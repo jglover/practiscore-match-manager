@@ -1,0 +1,81 @@
+div(style='display: none;' match-level='l1')
+  h3 Divisions
+  table.settings
+    tr.even
+      td
+        span(style='margin-top: 2px;').tleft Entries required per division
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l1-division-minimum-entries
+    tr.odd
+      td
+        span(style='margin-top: -1px;').tleft Print division awards
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-l1-print-division
+
+  h3 Classes
+  table.settings
+    tr.even
+      td
+        span(style='margin-top: -1px;').tleft Print class awards
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-l1-print-class
+    tr(no-class-hide).odd
+      td
+        span(style='margin-top: -1px;').tleft Ignore division minimum requirements
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' settings-save)#checkbox-l1-class-ignore-division-minimum
+    tr(no-class-hide).even
+      td
+        span(style='margin-top: 2px;').tleft Entries required per class
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l1-class-minimum-entries
+    tr(no-class-hide).odd
+      td
+        span(style='margin-top: -1px;').tleft Use normal award step
+        span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='l1-class-step' radiobutton-is-selected settings-save)#radiobutton-l1-class-award-step-normal
+    tr(no-class-hide class-step-normal-fade).even
+      td
+        span(style='margin-top: 2px;').tleft Award for every Nth position
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' class-step-normal-disable settings-save)#numberinput-l1-class-award-step
+    tr(no-class-hide class-step-normal-fade).odd
+      td
+        span(style='margin-top: 2px;').tleft Maximum awards per class
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' class-step-normal-disable settings-save)#numberinput-l1-class-maximum-awards
+    tr(no-class-hide).even
+      td
+        span(style='margin-top: -1px;').tleft Use custom award step
+        span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='l1-class-step' settings-save)#radiobutton-l1-class-award-step-custom
+    tr(no-class-hide class-step-custom-fade).odd
+      td
+        span(style='margin-top: 2px;').tleft Enter award positions (3, 7, 11, etc)
+        span(style='margin-right: -4px;').tright: input(type='text' controltype='textinput' csv-validation textinput-width='150' textinput-maxlen='30' class-step-custom-disable settings-save)#textinput-l1-class-award-step-custom
+
+  h3 Categories
+  table.settings
+    tr.even
+      td
+        span(style='margin-top: -1px;').tleft Print category awards
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-l1-print-category
+    tr(no-category-hide).odd
+      td
+        span(style='margin-top: -1px;').tleft Ignore division minimum requirements
+        span(style='margin-top: 2px;').tright: div(controltype='checkbox' settings-save)#checkbox-l1-category-ignore-division-minimum
+    tr(no-category-hide).even
+      td
+        span(style='margin-top: 2px;').tleft Entries required per category
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' settings-save)#numberinput-l1-category-minimum-entries
+    tr(no-category-hide).odd
+      td
+        span(style='margin-top: -1px;').tleft Use normal award step
+        span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='l1-category-step' radiobutton-is-selected settings-save)#radiobutton-l1-category-award-step-normal
+    tr(no-category-hide category-step-normal-fade).even
+      td
+        span(style='margin-top: 2px;').tleft Award for every Nth position
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' category-step-normal-disable settings-save)#numberinput-l1-category-award-step
+    tr(no-category-hide category-step-normal-fade).odd
+      td
+        span(style='margin-top: 2px;').tleft Maximum awards per category
+        span.tright: div(controltype='numberinput' numberinput-default='5' numberinput-min='1' numberinput-max='999' category-step-normal-disable settings-save)#numberinput-l1-category-maximum-awards
+    tr(no-category-hide).even
+      td
+        span(style='margin-top: -1px;').tleft Use custom award step
+        span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='l1-category-step' settings-save)#radiobutton-l1-category-award-step-custom
+    tr(no-category-hide category-step-custom-fade).odd
+      td
+        span(style='margin-top: 2px;').tleft Enter award positions (3, 7, 11, etc)
+        span(style='margin-right: -4px;').tright: input(type='text' controltype='textinput' csv-validation textinput-width='150' textinput-maxlen='30' category-step-custom-disable settings-save)#textinput-l1-category-award-step-custom

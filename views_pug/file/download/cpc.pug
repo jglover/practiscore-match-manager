@@ -1,0 +1,37 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/pmelib/textwidth.js')
+
+block content
+  div#help-page-id file-download-cpc
+  h1.hideondisconnect#section Download Match
+  h2.hideondisconnect#matchname= matchname
+
+  div(style='display:none')#serverDisconnect
+    p Disconnected from server! Click 'Reload' to try to re-connect.
+
+  div.hideondisconnect#content
+    div#downloadForm
+      p.
+        Enter the PIN for the match you've created at clubs.practiscore.com
+
+      div(style='text-align: center; display: inline-block;')
+        div#pinInput
+
+      p
+      div(style='display: inline-block;')
+        div(style='height: 25px;')#fixNameCase Check to automatically correct case of names, addresses, etc.
+        div(style='height: 25px;')#savePIN Check to save match PIN for later use
+
+      div#downloadButtonDiv
+        p
+        button#downloadButton Download
+
+      p(style='font-weight: bold')#message
+
+      p.
+        Clicking 'Download' will replace the current match. Be sure that
+        you've saved the current match, if necessary.
+
+  span(style='visibility: hidden; font-size: 13px; font-family: Verdana, Arial, sans-serif; font-style: normal; font-weight: normal;')#secret-span

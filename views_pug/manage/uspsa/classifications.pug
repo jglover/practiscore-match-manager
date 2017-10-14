@@ -1,0 +1,93 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/pmelib/textwidth.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+
+block content
+  div#help-page-id manage-uspsa-classifications
+  h1.hideondisconnect.no-print#section EzWinScore Classifications
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect.no-print#content
+    div#inputFields
+      h3 USPSA.org
+      table.config
+        tr.even
+          td
+            span(style='margin-top: 1px;').tleft Retrieve most recent classification file from website
+            span(style='margin-top: 0px;').tright: button(controltype='button' button-width='65')#button-get Get
+        tr(getmsg-tr style='display: none;')
+          td
+        tr(getmsg-tr style='display: none;')
+          td(message)#getMsg
+
+      h3 Match
+      table.config
+        tr(no-classifications-fade).even
+          td
+            span(style='margin-top: 1px;').tleft Select the classification set for this match
+            span.tright: div(no-classifications-disable-ddl controltype='ddl')#dropdownlist-set
+        tr(no-classifications-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Real-time verification of not-found USPSA#'s
+            span(style='margin-top: 2px;').tright: div(no-classifications-disable-checkbox controltype='checkbox' settings-save)#checkbox-verify
+        tr(no-classifications-fade no-verify-fade).even
+          td
+            span(style='margin-top: 1px;').tleft Your USPSA number
+            span.tright: input(style='padding-left: 3px;')#ec-uspsanum
+        tr(no-classifications-fade no-verify-fade).odd
+          td
+            span(style='margin-top: 1px;').tleft Your USPSA password
+            span.tright: input(style='padding-left: 3px;')#ec-uspsapw
+        tr(no-classifications-fade no-verify-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Add not-found USPSA#'s to classification database
+            span(style='margin-top: 2px;').tright: div(no-classifications-disable-checkbox controltype='checkbox' settings-save)#checkbox-add
+        tr(no-classifications-fade).odd
+          td
+            span(style='margin-top: 1px;').tleft Apply selected update
+            span(style='margin-top: 0px;').tright: button(no-classifications-disable-button controltype='button' button-width='65')#button-apply Apply
+
+        tr.hideondisconnectex(update-tr style='display: none;')
+          td
+        tr.hideondisconnectex(update-tr style='display: none;')
+          td(message)#updateMsg
+
+      div#uspsaLogin
+        p(style='text-align: justify;')
+          | Your USPSA number and password are NOT stored. The USPSA.org web page that displays
+          | the classification for a shooter only displays the first letter of the last name 
+          | unless you are logged in. Due to USPSA policy, you must be a member of USPSA.org 
+          | and logged into the site for the full last name to be visible.
+        p(style='text-align: justify;')
+          | If logged in, PMM can perform a more thorough verification of the shooter's USPSA 
+          | number, by verifying that the last name in the match matches the last name shown
+          | on the classification page. Suffixes (Jr, Sr, II, III, etc) are not checked, only
+          | the name portion of the last name.
+  
+      div.hideondisconnectex(view-tr style='display: none;')
+        p
+        button(style='margin-right: 5px;' controltype='button' button-width='105')#button-screen.
+          On Screen
+        button(style='margin-left: 5px;' controltype='button' button-width='105')#button-print-preview.
+          Print Preview
+        p
+        button(controltype='button' button-width='105')#button-email.
+          Email
+
+      p.hideondisconnectex(view-tr style='display: none;') (Printing is only supported when using the <a href='https://www.google.com/chrome/browser' target='_blank'>Chrome</a> browser)
+
+    div.hideondisconnectex#changesWindow
+      div
+        Modified Shooters
+      div#changesGrid
+
+    div.hideondisconnectex#emailWindow
+      div.
+        Expired Shooter's Email Addresses
+      div
+
+  span.no-print(style='visibility: hidden; font-size: 13px; font-family: Verdana, Arial, sans-serif; font-style: normal; font-weight: normal;')#secret-span
+
+  div.no-screen#printing

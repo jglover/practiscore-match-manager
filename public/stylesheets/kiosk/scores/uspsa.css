@@ -1,0 +1,100 @@
+#content {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#errorMessage {
+  text-align: center;
+}
+
+/*
+**
+*/
+#individualDropdown {
+  text-align: center;
+}
+
+#individualShooterName {
+  text-align: center;
+  font-weight: bold;
+}
+
+/*
+ *
+*/
+#scoresTop {
+  text-align: center;
+}
+
+.scoresName, .scoresClass, .scoresDivision {
+}
+
+.scoresPlace, .scoresNum, .scoresPoints, .scoresPenalty, .scoresTime, .scoresHF, .scoresStgPts, .scoresStgPct {
+  text-align: right;
+}
+
+/*
+ *
+*/
+#reviewTop {
+  text-align: center;
+}
+
+.reviewName, .reviewUSPSA, .reviewDivision, .reviewClass, .reviewDNF, .reviewDQ {
+}
+
+.reviewSquad, .reviewA, .reviewB, .reviewC, .reviewD, .reviewM, .reviewNS, .reviewNPM, .reviewProc, .reviewAddPen, .reviewTime, .reviewHF {
+  text-align: right;
+}
+
+/*
+ *
+*/
+#combinedTop {
+  text-align: center;
+}
+
+.combinedUSPSA, .combinedClass, .combinedDivision, .combinedAge, .combinedLady, .combinedMil, .combinedLaw, .combinedFor {
+}
+
+.combinedName {
+}
+
+.combinedPlace, .combinedMatchPts, .combinedMatchPct {
+  text-align: right;
+}
+
+/*
+**
+*/
+.tablesorter {
+  font-size: 1.0em;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.tablesorter-jui thead td {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-header {
+  white-space: nowrap;
+  padding: 4px;
+}
+
+.tablesorter .tablesorter-filter-row {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-filter {
+  width: 80px;
+  padding: 1px;
+}
+
+.tablesorter-force-link {
+  cursor: pointer;
+  text-decoration: underline;
+}

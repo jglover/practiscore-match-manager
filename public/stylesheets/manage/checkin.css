@@ -1,0 +1,51 @@
+#content {
+  display: flex;
+  justify-content: center;
+}
+
+#help {
+  text-align: left;
+  display : inline-block;
+}
+
+.tlabel {
+  text-align: right;
+}
+
+.tspace {
+  padding-left: 4px;
+}
+
+.tinput {
+  text-align: left;
+}
+
+.pmm-checkmark-space {
+  padding-left: 1.2em;
+}
+
+.pmm-checkmark-present::before {
+  content: '';
+  position: absolute;
+  border-color: #009933;
+  border-style: solid;
+  border-width: 0 0.3em 0.25em 0;
+  height: 0.8em;
+  width: 0.4em;
+  top: 1.2em;
+  left: 0.4em;
+  margin-top: -1em;
+  transform: rotate(45deg);
+}
+
+.pmm-checkmark-deleted::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0.25em;
+  content: '\274c';
+  font-size: 1.0em;
+  color: #F00;
+}

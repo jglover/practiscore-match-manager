@@ -1,0 +1,274 @@
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+body {
+  font-family: Arial,Sans-Serif;
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#awards {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h3 {
+  width: 600px;
+  margin: 0 auto 5px;
+  border-bottom: 1px solid #666;
+  padding: 0;
+  text-align: left;
+}
+
+table.settings {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 550px;
+}
+
+table.settings tr, table.settings td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 560px;
+}
+
+table.settings tr.even {
+  background: #fdfdfd;
+}
+
+table.settings tr.odd {
+  background: #f3f3f3;
+}
+
+table.settings td {
+  height: 27px;
+  width: 600px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}
+
+.tinput {
+  text-align: left;
+}
+
+/*
+**
+*/
+table.payout {
+  border-collapse: collapse;
+  border: none;
+}
+
+table.payout tr, table.payout th, table.payout td {
+  border: none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+table.payout th.payout-1-left-header {
+  text-align: center;
+}
+table.payout td.payout-1-left-item {
+  text-align: right;
+}
+table.payout td.payout-1-left-payout {
+  text-align: left;
+}
+
+table.payout th.payout-2-left-header {
+  text-align: center;
+  border-right: 1px solid black;
+}
+table.payout th.payout-2-right-header {
+  text-align: center;
+  border-left: 1px solid black;
+}
+table.payout td.payout-2-left-item {
+  text-align: right;
+}
+table.payout td.payout-2-left-payout {
+  text-align: right;
+  border-right: 1px solid black;
+  padding-right: 15px;
+}
+table.payout td.payout-2-right-item {
+  text-align: right;
+  border-left: 1px solid black;
+  padding-left: 15px;
+}
+table.payout td.payout-2-right-payout {
+  text-align: right;
+}
+
+table.payout th.payout-3-left-header {
+  text-align: center;
+  border-right: 1px solid black;
+}
+table.payout th.payout-3-middle-header {
+  text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+table.payout th.payout-3-right-header {
+  text-align: center;
+  border-left: 1px solid black;
+}
+table.payout td.payout-3-left-item {
+  text-align: right;
+}
+table.payout td.payout-3-left-payout {
+  text-align: right;
+  border-right: 1px solid black;
+  padding-right: 15px;
+}
+table.payout td.payout-3-middle-item {
+  text-align: right;
+  border-left: 1px solid black;
+  padding-left: 15px;
+}
+table.payout td.payout-3-middle-payout {
+  text-align: right;
+  border-right: 1px solid black;
+  padding-right: 15px;
+}
+table.payout td.payout-3-right-item {
+  text-align: right;
+  border-left: 1px solid black;
+  padding-left: 15px;
+}
+table.payout td.payout-3-right-payout {
+  text-align: right;
+}
+
+/*
+**  Tables have thin lines, are centered on the page, and the cells are
+**  padded to make them less crowded.
+*/
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/*
+**  Used for formatting the statistics tables. Overall width is 300px, and
+**  specifiers for left, center and right columns
+*/
+.stats {
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+.stats_l {
+  width: 150px;
+  text-align: center;
+}
+
+.stats_c {
+  text-align: right;
+  padding-right: 13px;
+}
+
+.stats_r {
+  text-align: right;
+  padding-right: 27px;
+}
+
+/*
+**  Table of contents table
+*/
+.toc {
+  border: none;
+  text-align: center;
+}
+
+.toc td {
+  padding: 0px;
+  border: none;
+}
+
+/*
+**  Configuration table
+*/
+.config {
+  border: none;
+}
+
+.config td {
+  vertical-align: top;
+  padding: 2px;
+  border: none;
+}
+
+.config_l { text-align: right; }
+.config_r { text-align: left; }
+
+/*
+**  CSS for tables containing competitor info. Resuls with only one
+**  competitor don't use the 'Place' column, while results that do
+**  have placement do use the 'Place' column.
+*/
+.results_place    { }
+.results_name     { min-width: 200px; }
+.results_state    { }
+.results_class    { }
+.results_age      { }
+.results_fem      { }
+.results_mil      { }
+.results_law      { }
+.results_division { min-width: 100px; }
+.results_category { min-width: 100px; }
+
+/*
+**  No entries text is in the next size up font
+*/
+.noentries { font-size: larger; }
+
+/*
+**  Title for each section
+*/
+.title { font-weight: bold; }
+
+/*
+**
+*/
+#errorMessage {
+  margin-top: 50px;
+  text-align: center;
+}

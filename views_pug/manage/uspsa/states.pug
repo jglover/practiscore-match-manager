@@ -1,0 +1,35 @@
+extends /layout_jq
+
+block content
+  div#help-page-id manage-uspsa-states
+  h1.hideondisconnect.no-print#section Update Competitor Areas & States
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect#content
+    p(style='text-align: justify;')
+      | This option will retrieve the member information for each competitor 
+      | with a USPSA number from the USPSA.org website, extract their listed 
+      | area & state of residence, and update the match with that information.
+    p(style='text-align: justify;')
+      | It is recommended to first run Manage->USPSA.org->Update Classifications
+      | to ensure any competitors who may have changed their USPSA membership
+      | from a term to life membership are up to date. Otherwise, the competitor
+      | may not be found, and their state and area will not be updated.
+    p
+
+    div#inputFields
+      h3 Options
+      table.config
+        tr.even
+          td
+            span(style='margin-top: 1px;').tleft Skip competitors with state already set
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' settings-save)#checkbox-skipstateset
+        tr.odd
+          td
+            span(style='margin-top: 1px;').tleft Skip competitors marked foreign
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' settings-save)#checkbox-skipforeignset
+
+      p
+      button(controltype='button' button-width='65')#button-begin.
+        Begin
+    p(message)#msgStates

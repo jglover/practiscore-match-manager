@@ -1,0 +1,123 @@
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+.nobreak {
+  page-break-inside: avoid;
+}
+
+body {
+  font-family: Arial,Sans-Serif;
+}
+
+.printing {
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#report {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+table.settings {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 550px;
+}
+
+table.settings tr, table.settings td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 560px;
+}
+
+table.settings tr.even {
+  background: #fdfdfd;
+}
+
+table.settings tr.odd {
+  background: #f3f3f3;
+}
+
+table.settings td {
+  height: 27px;
+  width: 600px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}
+
+table.squadselect {
+  border-collapse: collapse;
+  border: none;
+}
+
+table.squadselect td {
+  height: 27px;
+  width: 55px;
+  text-align: right;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
+.rtltext {
+  padding-right: 4px;
+}
+
+.field-squadno   { font-weight: bold; }
+
+.table-squad     {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.header-comp     { width:  70px; text-align: center; }
+.header-name     { width: 250px; text-align: center; }
+.header-uspsa    { width:  85px; text-align: center; }
+.header-division { width: 115px; text-align: center; }
+.header-class    { width:  50px; text-align: center; }
+.header-age      { width:  65px; text-align: center; }
+.header-lady     { width:  45px; text-align: center; }
+.header-law      { width:  40px; text-align: center; }
+.header-mil      { width:  40px; text-align: center; }
+.header-frn      { width:  40px; text-align: center; }
+
+.field-comp      { text-align: right; padding-right: 20px; }
+.field-name      { text-align: left; }
+.field-uspsa     { text-align: left; }
+.field-division  { text-align: left; }
+.field-class     { text-align: center; }
+.field-age       { text-align: center; }
+.field-lady      { text-align: center; }
+.field-law       { text-align: center; }
+.field-mil       { text-align: center; }
+.field-frn       { text-align: center; }
+
+.row-even        { }
+.row-odd         { background: #f3f3f3; }

@@ -1,0 +1,36 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-practiprint
+  h1.hideondisconnect#section PractiPrint Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 Printing
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Enable PractiPrint server
+            span(style='margin-top: 2px;').tright: div#ex-practiprintServer
+        tr.odd
+          td
+            span(style='margin-top: 2px;').tleft Select print routing method
+            span.tright: div#ec-practiprintMethod
+        tr.even
+          td
+            span(style='margin-top: 2px;').tleft PractiPrint port number
+            span.tright: input(style='padding-left: 3px;')#ec-practiprintPort
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Announce PractiPrint via mDNS/Bonjour
+            span(style='margin-top: 2px;').tright: div#ex-practiprintAnnounce
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

@@ -1,0 +1,49 @@
+{
+  "name": "PractiScore_Match_Manager",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "adm-zip": "https://github.com/jcwren/adm-zip/tarball/eeb763317092232b73f4adb5c25d1f63e7b33db6",
+    "async": "*",
+    "body-parser": "*",
+    "chalk": "*",
+    "cheerio": "*",
+    "coffee-script": "*",
+    "connect": "*",
+    "cookie-parser": "*",
+    "csv-parse": "*",
+    "debug": "*",
+    "deep-diff": "*",
+    "express.io": "*",
+    "jquery": "*",
+    "locks": "*",
+    "lodash": "3.10.1",
+    "mdns": "*",
+    "moment": "*",
+    "morgan": "*",
+    "namecase": "*",
+    "node-uuid": "*",
+    "pako": ">=0.2.0",
+    "pretty-json": "*",
+    "pug": ">=2.0.0-alpha6",
+    "request": "*",
+    "serve-favicon": "*",
+    "sprintf-js": "*",
+    "sqlite3": "*",
+    "tmp": "*",
+    "tough-cookie": "*",
+    "validator": "*",
+    "wait.for": "*",
+
+    "//": [
+      "These are required for the EZWS import/export module,",
+      "and will need to be moved out of the comments section",
+      "when Windows is better supported.",
+      { "winreg": "*" },
+      { "odbc": "*" }
+    ]
+  }
+}

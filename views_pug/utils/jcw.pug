@@ -1,0 +1,53 @@
+extends /layout_jq
+
+block content
+  div#help-page-id utils-jcw
+  h1.hideondisconnect#section JCW Stuff
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    p(style='text-align: justify;')
+      | This function imports the .csv file created by the 'Export All' option
+      | in clubs.practiscore.com. It will extract the address, city, zipcode
+      | and approval status fields and update the matching competitor in the
+      | current match. The file must be named 'cpc_exportall.csv', and be in
+      | the 'matches' directory.
+    p(style='text-align: justify;')
+      | For the competitor's address, city and zipcode to be updated, the
+      | USPSA number, state, phone and email address must match those already
+      | present in the current match. If any of those fields differ, an error
+      | message will be displayed on the console.
+    p(style='text-align: justify;')
+      | The 'Approval Status' column in the .csv file is used to set the
+      | 'sh_type' field for the competitor. This is used by the 'Competitor
+      | Type' report. Possible values for 'sh_type' are 'Junior', 'Staff',
+      | 'Sponsor' and 'Competitor'.
+    p
+      button#buttonImport Import
+    p(style='display: none;').message#msgImport
+
+    hr
+    p(style='text-align: justify;')
+      | This function creates a comma separated file named 'range_report.csv'
+      | in the 'matches' directory. This file contains all the non-deleted
+      | competitors in the match, in last name, first name order, along with
+      | the competitor type ('Junior', 'Staff', 'Sponsor', 'Competitor'). The
+      | type of competitor is set from the 'Import' function, above.
+    p
+      button#buttonCreate Create
+    p(style='display: none;').message#msgCreate
+
+    hr
+    p(style='text-align: justify;')
+      | This function will HARD DELETE all competitors marked as deleted from
+      | the match. VERY DANGEROUS! DO NOT USE!
+    p
+      button#buttonDelete Delete
+    p(style='display: none;').message#msgDelete
+
+    hr
+    p(style='text-align: justify;')
+      | Export a .csv file containing squads and competitors
+    p
+      button#buttonExport Export
+    p(style='display: none;').message#msgExport

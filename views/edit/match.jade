@@ -1,0 +1,131 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/libs/jqwidgets/globalization/globalize.js')
+  script(src='/javascripts/pmelib/textwidth.js')
+
+block content
+  div#help-page-id edit-match-uspsa
+  h1.hideondisconnect#section Edit Match
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#inputFields
+      h3 Match
+      table.config
+        tr.even
+          td
+            span.tleft Match Name
+            span.tright: input(controltype='input' style='padding-right: 3px;')#input-match-name
+        tr.odd
+          td
+            span.tleft Match Date
+            span.tright: div(controltype='date' style='padding-right: 3px;')#datetimeinput-match-date
+
+      h3 Club
+      table.config
+        tr.even
+          td
+            span.tleft Club Name
+            span.tright: input(controltype='input' style='padding-right: 3px;')#input-club-name
+        tr.odd
+          td
+            span.tleft Club Code
+            span.tright: input(controltype='input' style='padding-right: 3px;')#input-club-code
+
+      //
+      //  USPSA: IPSC, none
+      //  Time Plus: 3GN, none
+      //  Time Plus Points: Tennessee 3 Gun, none
+      //  IDPA: (none)
+      //  3GN Pro Series: (none)
+      //  3GN Pro 2015: (none)
+      //  Steel Challenge: NSSF Rimfire Challenge, SCSA, none
+      //  Precision Rifle: (none)
+      //  Time Plus Custom: (none)
+      //  NRA Action: (none)
+      //  Clay Sports: (none)
+      //  ProAm: (none)
+      //  ICORE: (none)
+      //  GADPA: (none)
+      //
+      div(style='display: none;')#match-subtype
+        h3 Sub Type
+        table.config
+          tr.even
+            td
+              span.tleft Match Subtype
+              span.tright: ul(controltype='dropdown')#dropdown-match-subtype
+
+      //
+      //  USPSA: Level I, II, III
+      //
+      div(style='display: none;')#match-level
+        h3 Level
+        table.config
+          tr.even
+            td
+              span.tleft Level
+              span.tright: ul(controltype='dropdown')#dropdown-match-level
+
+      h3 Logging
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Log Enabled
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#checkbox-logging-enabled
+        tr.odd
+          td
+            span.tleft Unsent Log Warnings Count
+            span.tright: div(controltype='number' style='padding-right: 3px;')#input-logging-unsentlogswarningcount
+
+      h3 Options
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Read-Only
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#checkbox-match-readonly
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Suppress Incomplete Score Alert
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#checkbox-match-suppressincompletescorealert
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Use Open Squadding
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#checkbox-squadding-useopensquadding
+
+      //
+      //  USPSA: no
+      //  Time Plus: yes
+      //  Time Plus Points: yes
+      //  IDPA: no
+      //  3GN Pro Series: yes
+      //  3GN Pro 2015: yes
+      //  Steel Challenge: no
+      //  Precision Rifle: no
+      //  Time Plus Custom: no
+      //  NRA Action: no
+      //  Clay Sports: no
+      //  ProAm: no
+      //  ICORE: no
+      //  GADPA: no
+      //
+      div(style='display: none;')#match-stagetimes
+        h3 Stage Times
+        table.config
+          tr.even
+            td
+              span(style='margin-top: -1px;').tleft Use Maximum Stage Time
+              span(style='margin-top: 2px;').tright: div(controltype='checkbox')#checkbox-stagetimes-usemaximumstagetime
+          tr.odd
+            td
+              span.tleft Maximum Stage Time
+              span.tright: input(controltype='input' style='padding-right: 3px;')#input-stagetimes-maximumstagetime
+
+      p
+        button(controltype='button' style='margin-left: 4px;')#button-reset Reset
+        button(controltype='button' style='margin-left: 4px;')#button-save Save
+
+    p#msg
+
+  span(style='visibility: hidden; font-size: 13px; font-family: Verdana, Arial, sans-serif; font-style: normal; font-weight: normal;')#secret-span

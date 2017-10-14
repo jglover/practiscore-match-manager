@@ -1,0 +1,112 @@
+#content {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#errorMessage {
+  text-align: center;
+}
+
+#progressTable {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+#progressTable table, th, td {
+  border: 1px solid black;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.progress-none {
+  cursor: pointer;
+}
+
+.progress-complete {
+  background-color: lime;
+  cursor: pointer;
+}
+
+.progress-complete-with-dnf {
+  background-color: limegreen;
+  cursor: pointer;
+}
+
+.progress-warn {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+#lastScore {
+  text-align: center;
+}
+
+#summaryLine {
+  text-align: center;
+}
+
+#hintLine {
+  text-align: center;
+}
+
+/*
+**
+*/
+#popup {
+  background-color: #fff;
+  border-radius: 15px;
+  color: #000;
+  display: none;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+#popup-content, #popup-content-deleted, #popup-content-dq, #popup-content-zerotime {
+  display: inline-block;
+  text-align: left;
+}
+
+#popup-content-complete {
+  padding-left: 20px;
+}
+
+#popup-content-dnf {
+  padding-left: 20px;
+}
+
+#popup-content-missing {
+  padding-left: 20px;
+}
+
+table.popup-content-table-css {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table.popup-content-table-css th,
+table.popup-content-table-css td {
+  border: 1px solid black;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.ui-dialog .ui-dialog-title {
+  text-align: center;
+  width: 100%;
+}
+
+.ui-widget {
+  font-size: 1.0em;
+}

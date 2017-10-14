@@ -1,0 +1,48 @@
+extends /layout_jq
+
+block content
+  div#help-page-id reports-squad-uspsa
+  h1.hideondisconnect.no-print#section Squad Report
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect#content
+    div.no-print#print
+      table.settings
+        tr.even
+          td
+            span.tleft Select squads to print
+            span.tright
+              table(style='display: none;').squadselect#squadselect
+                tr#squadselect-buttons
+                  td(colspan=5 style='text-align: center; padding-bottom: 4px;')
+                    button(style='margin-right: 5px;' controltype='button' button-width='65')#button-select-all.
+                      All
+                    button(style='margin-right: 5px;' controltype='button' button-width='65')#button-select-none.
+                      None
+                    button(controltype='button' button-width='65')#button-select-invert.
+                      Invert
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Use even/odd highlighting
+            span(style='margin-top: 2px; margin-left: 4px;').tright: div(controltype='checkbox')#checkbox-highlight
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Print one squad per page
+            span(style='margin-top: 2px; margin-left: 4px;').tright: div(controltype='checkbox')#checkbox-squadperpage
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Include deleted competitors
+            span(style='margin-top: 2px; margin-left: 4px;').tright: div(controltype='checkbox')#checkbox-includedeleted
+      p
+        button(style='margin-right: 5px;' controltype='button' button-width='105')#button-screen.
+          On Screen
+        button(style='margin-left: 5px;' controltype='button' button-width='105')#button-print-preview.
+          Print Preview
+      p(style='text-align: justify;')
+        | To print correctly, when the print preview dialog is presented, set
+        | the layout to portrait, paper size to landscape, margins to default,
+        | and check the 'Background graphics' checkbox.
+      p
+        | (Printing is only supported when using the <a href='https://www.google.com/chrome/browser' target='_blank'>Chrome</a> browser)
+
+  div.no-screen#report

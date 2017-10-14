@@ -1,0 +1,40 @@
+extends /layout_jq
+
+block content
+  div#help-page-id edit-penalties
+  h1.hideondisconnect#section Add/Edit Penalties
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#penaltiesGrid
+
+  div(style='display: none;').hideondisconnectex#popupEdit
+    div Window Title
+    div(style='overflow: hidden;')
+      table
+        tr
+          td.tlabel Name:
+          td.tinput: input(style='padding-left: 3px;')#ec-pmmname
+        tr
+          td.tlabel Value:
+          td.tinput: input(style='padding-left: 3px;')#ec-psname
+        tr
+          td.tlabel Enabled:
+          td.tinput: div#ec-enabled
+
+      p
+      div(style='float: right')
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-cancelButton Cancel
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li#contextEditPenalty Edit This Penalty (#<span id='contextEditPenaltyNum'>0</span>)
+      li#contextAddPenalty Add New Penalty (#<span id='contextAddPenaltyNum'>0</span>)
+      li#contextDeletePenalty Delete This Penalty (#<span id='contextDeletePenaltyNum'>0</span>)
+
+      li Edit Mode
+        ul(style='width: 60px;')
+          li#contextEditModeInline Inline
+          li#contextEditModePopup Popup

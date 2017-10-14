@@ -1,0 +1,62 @@
+/*
+**  Body defaults to Arial with Sans-Serif as a back-up. All text is
+**  centered, except where it's not.
+*/
+body {
+  font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+}
+
+body, html, #content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#jqxMenu {
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#jqxMenuAction {
+  font-size: larger;
+  padding-top: 2px;
+}
+
+#jqxMenuMatch {
+  font-size: larger;
+  padding-top: 1px;
+}
+
+#section {
+  text-align: center;
+}
+
+#matchname {
+  text-align: center;
+}
+
+#copyright {
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+}
+
+#copyrightBreak {
+  margin-top: 16px;
+}
+
+#copyrightText {
+  font-size: x-small;
+}
+
+#serverDisconnect {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: red;
+}
+
+#help-page-id {
+  display: none;
+}

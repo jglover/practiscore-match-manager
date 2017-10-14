@@ -1,0 +1,12 @@
+extends /layout
+
+block content
+  div#help-page-id file-imexport-exws-exportdb
+  h1.hideondisconnect#section Export Match To EzWinScore Database
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    - if (platform !== 'win32')
+      p Sorry, but exporting an EzWinScore database only works under Windows :(
+    - else
+      p Sorry, but someone should write some code to do this!

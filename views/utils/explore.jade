@@ -1,0 +1,17 @@
+extends /layout
+
+append head
+  script(src='/javascripts/libs/backbone.min.js')
+  script(src='/javascripts/libs/pretty-json.min.js')
+
+block content
+  div#help-page-id utils-jsonexplorer
+  h1.hideondisconnect#section JSON Explorer
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    div#buttonDiv
+      button#buttonExpand Expand All
+      button#buttonCollapse Collapse All
+    p
+    div(style='text-align: left;')#prettyJSON

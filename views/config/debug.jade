@@ -1,0 +1,43 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-debug
+  h1.hideondisconnect#section Debugging Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 Device Syncing
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Display device headers
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#ex-deviceDisplayHeaders
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Display polling state progress
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#ex-deviceDisplayState
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Save device data from each poll
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#ex-deviceSaveData
+
+      h3 Merging
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Show details when merging
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#ex-mergeDetails
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Show deep-diff when merging
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox')#ex-mergeDeepDiff
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

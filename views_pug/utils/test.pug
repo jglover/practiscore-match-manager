@@ -1,0 +1,49 @@
+extends /layout
+
+block content
+  div#help-page-id utils-test
+  h1.hideondisconnect#section Test Functions
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    p
+      button#buttonReload Reload Unscored Match
+    p
+      button#buttonPlay Start Match Playback
+    p
+      button#buttonStop Stop Match Playback
+    p
+      button#buttonFast Instant Playback
+    p
+      button#buttonShowApp Show App
+    p
+      button#buttonPractiprintStart Start PractiPrint Server
+      button#buttonPractiprintStop Stop PractiPrint Server
+
+    p#status
+    div#help
+      hr
+      p
+        | <b>Reload Unscored Match</b> -- Reloads the #{matchname}
+        | match, complete with competitors and stages, before any scoring took
+        | place.
+
+      p
+        | <b>Start Match Playback</b> -- The file containing snapshots of the
+        | stage scoring devices taken at various points during the match. This is
+        | played back at the rate of 4 records per second. Opening a window to
+        | the Match Progress Report or Scores view will update those pages in
+        | real-time.  There are 147 entries in the file, which takes about 37
+        | seconds to replay.
+
+      p
+        | <b>Stop Match Playback</b> -- If a match playback is in progress, it
+        | may be stopped by clicking this button. The state of the match will be
+        | incomplete, but does represent a what the real match scores would look
+        | like at this point in time.
+
+      p
+        | <b>Instant Playback</b> -- Used after 'Reload Unscored Match', this
+        | loads the entire snapshot file in one operation. Useful to quickly
+        | have a completed match, but without waiting the 37 seconds for the
+        | match to load.

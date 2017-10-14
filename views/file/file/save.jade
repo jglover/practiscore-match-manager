@@ -1,0 +1,35 @@
+extends /layout_jq
+
+block content
+  div#help-page-id file-file-save
+  h1.hideondisconnect#section Save Match To File
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#saveForm
+      table
+        tr
+          td Enter name to save file as:
+        tr
+          td
+            input(type='text' value=matchname_stripped)#fileName.text-input
+        tr
+          td
+
+      div(style='display: inline-block;')
+        p
+        div(style='height: 25px;')#overwrite Check to overwrite if file name already exists
+
+      p
+      div
+        button#resetButton Reset
+        button(style='margin-left: 10px;')#saveButton Save
+
+    p(style='font-weight: bold')#saveMessage
+    p(style='text-align: justify').
+      If the extension '.psc' is not present in the file name, it will be appended automatically
+      before being saved.
+    p(style='text-align: justify').
+      Note that the file name will be stripped of any characters other than letters (a-z, A-Z),
+      numbers (0-9), underscores, dashes, or periods. This is done to maintain compatibility of
+      the file names between OSX, Linux, and Windows.

@@ -1,0 +1,14 @@
+extends /layout
+
+block content
+  div#help-page-id utils-jsonchecker
+  h1.hideondisconnect#section JSON Checker
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    p#help
+      | The JSON checker evaluates all the JSON in the currently loaded match,
+      | and flags any unrecognized JSON elements. This is primarily a development
+      | tool to catch any new additions.
+    p#status Waiting for server...
+    pre#results

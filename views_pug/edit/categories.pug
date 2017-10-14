@@ -1,0 +1,37 @@
+extends /layout_jq
+
+block content
+  div#help-page-id edit-categories
+  h1.hideondisconnect#section Add/Edit Categories
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#categoriesGrid
+
+  div(style='display: none;').hideondisconnectex#popupEdit
+    div Window Title
+    div(style='overflow: hidden;')
+      table
+        tr
+          td.tlabel Name:
+          td.tinput: input(style='padding-left: 3px;')#ec-pmmname
+        tr
+          td.tlabel Enabled:
+          td.tinput: div#ec-enabled
+
+      p
+      div(style='float: right')
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-cancelButton Cancel
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li#contextEditCategory Edit This Category (#<span id='contextEditCategoryNum'>0</span>)
+      li#contextAddCategory Add New Category (#<span id='contextAddCategoryNum'>0</span>)
+      li#contextDeleteCategory Delete This Category (#<span id='contextDeleteCategoryNum'>0</span>)
+
+      li Edit Mode
+        ul(style='width: 60px;')
+          li#contextEditModeInline Inline
+          li#contextEditModePopup Popup

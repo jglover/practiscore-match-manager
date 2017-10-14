@@ -1,0 +1,586 @@
+2016/05/09.01
+  Added support to print #10 envelopes for winners in Reports->Awards
+  Fixed issue with name autocomplete in Manage->Checkin
+  Converted from jade to 'pug' template system (stupid name, more stupid icon)
+
+2016/04/20.01
+  Updated Manage->USPSA.org->Update Classifications to handle term to life membership changes
+
+2016/04/18.01
+  Updated Manage->USPSA.org->Update States to allow not updating competitors with state already present or if foreign
+  Fixed issue with foreign shooters being deleted in Reports->Projections (USPSA)
+  Fixed USPSA classification update to update class whether expired or not
+  Moved Import->CSV File to Import->PractiScore->CSV File (still doesn't actually do anything)
+  Added defaulting match level to match level in match for Reports->(Awards|Projections)
+
+2016/04/15.01
+  Added Reports->Statistics for USPSA matches
+  Added Manage->USPSA.org->Update States to get competitor state and area from USPSA.org
+  Added support for match passwording, teams and seeding (transfer only, no editing)
+  Fixed issue where legacy and sh_ctgs settings were not kept in sync
+  Fixed issue with Reports->Squads if number of squads was an even multiple of 5
+
+2016/03/13.01
+  Restricted lodash to 3.10.1 due to massive API changed in 4+
+  Added coffee-script and connect to package.json
+
+2016/01/08.01
+  Fixed issue with File->Import->Shoot'n-Score-It->Registration not working
+
+2015/12/01.01
+  Unified Edit/View->Match editing
+
+2015/11/19.01
+  Added context menu option to Edit/View->Competitors to strip invalid membership numbers (SC, TP, USPSA)
+  Fixed issue with main menu bar not updating when match type changed
+
+2015/11/18.01
+  Added save/restore for options on Manage->Check-in view
+  Fixed 'New' button on Manage->Check-in to work
+
+2015/11/17.01
+  Added various filtering options on Manage->Check-in view
+
+2015/11/12.01
+  Fixed issue with labels for stage 11 or higher not printing
+  Fixed issue with shooter number not showing up in View/Edit->Competitors and other places
+
+2015/11/11.01
+  Added ability to combine like-type matches (File->File->Combine)
+  Fixed issue with TimePlus match editor (Edit/View->Match)
+  Added add/edit TimePlus stages (Edit/View->Stages)
+  Fixed clicking on already selected names to switch to competitor editing tab (Manage->Check-in)
+  Fixed some failure to update issues when editing in another browser tab (Manage->Check-in)
+  Fixed cancel/save buttons to be same order on Edit/View->Competitors and Manage->Check-in
+
+2015/11/04.01
+  Fixed issue with categories being improperly encoded
+  Fixed issue with penalties being duplicated on iOS/Android after syncing
+  Added check-in support (Manage->Check-In)
+  Added separate configuration page for debug options (Config->Debug)
+  Added option to log all data from stage devices to database (for debugging)
+  Fixed issue with SquadSignup.com not updating .psc file for download
+  Fixed issue with TimePlus competitor editing
+
+2015/10/21.01
+  Fixed issue with editing categories/classes/divisions throwing Javascript error
+  Added console logging of changes for add/edit/delete on categories/classes/divisions
+  Fixed console logging when editing shooter to display shooter name before any changes
+  Added setting stage_maxstringtime and stage_removeworststring in Steel Challenge matches
+  Fixed issues with match and shooter categories being set incorrectly
+  Fixed steel challenge scores to ignore missing raw time if penalties >= 30 seconds
+  Added depersonalizing of shooters to context menu on shooter editing page
+
+2015/10/15.01
+  Added support for user-defined categories, classes and divisions
+  Added downloading matches from SquadSignup.com
+  Added TimePlus label printing, competitor editing
+  Added traditional vs category views to competitor editing
+
+2015/09/18.01
+  Fixed issue with downloaded files and missing fields not merging properly
+
+2015/09/11.01
+  Fixed issue with shooter division always set to Open when downloading Steel Challenge match
+
+2015/09/03.01
+  Added squad-per-page option to Reports->Squad
+
+2015/09/02.01
+  Added indication of how many entries in print queue in context menu (Edit/View->Competitors)
+  Fixed issue with clearing print queue not working correctly (Edit/View->Competitors)
+  Added option to clear print queue after printing labels (Reports->Labels)
+  Added squad report (Reports->Squad) (USPSA)
+
+2015/08/26.01
+  Fixed match fragment merging (File->File->Merge Fragment)
+  Added support to export EZWS registration, squad and stage files (File->Export->EzWinScore->Combined)
+
+2015/08/25.01
+  Added ability to jog label positions (Reports->Labels)
+
+2015/08/24.01
+  Added Reports->CCR Cards (USPSA)
+  Fixed scores and awards reports to ignore stages marked as deleted
+  Added help ID tags to all Jade template files, but still not help text :(
+  Factored code to use functions in pmelib where possible
+
+2015/08/21.01
+  Fixed anything using jqxGrid editing to disable using delete key to clear a cell
+  Fixed merge code to force values into null items (partial fix for above item)
+  Added additional functionality to Edit/View->Scores Test (USPSA)
+  Allow parenthesis in first name in Edit/View->Competitors
+
+2015/08/20.01
+  Fixed menu dropdown width so SteelChallenge.com isn't displayed oddly
+  Force Carry Optics to set minor power factor (as Production does)
+  Converted most of Edit/View->Scores (USPSA) to new format (Review not implemented, kiosk mode untest)
+
+2015/08/19.01
+  Fixed issue with competitor editing changing sh_age, sh_gen, sh_mil, sh_law, or sh_frn not updating sh_ctgs
+  Added preliminary generation of USPSA activity report (NOT LEGAL FOR UPLOAD to USPSA.org!)
+  Added Reports->Waiver (RBGC specific at the moment)
+  Fixed File->DB->Save to use new interface
+  Fixed problem with grid updating correctly after deleting match (File->DB->Load, File->File->Load)
+
+2015/08/14.01
+  Fixed device grid to maintain sort order after grid is refreshed (Manage->Devices)
+  Added 'Carry Optics' division support (USPSA)
+  Added fixing RO/CRO names (Ii->II, Iii->III, Iv->IV, add period after free-standing initials) (Manage->Update RO/CRO List)
+  Added color coding ROs and CROs on squad list (USPSA)
+  Added Reports->Squad ROs report (USPSA)
+
+2015/08/13.01
+  Fixed issue with USPSA RO/CRO list pop-up window
+  Changed USPSA RO/CRO list to use POST instead of GET for user/password parameters
+
+2015/08/11.01
+  Added downloading of USPSA RO/CRO list to database (not used for anything yet)
+
+2015/08/10.01
+  Added display of number of competitors in downloaded match (File->Download->cpc)
+  Fixed issue with cursor reverting to 'move' cursor when context menu opens (Add/Edit->Divisions)
+  Add/Edit->Divisions now actually affects the match divisions
+
+2015/08/08.01
+  Fixed to highlight bad data in match progress view by coloring cell red
+
+2015/08/07.01
+  Fixed error with classification email pop-up window containing non-expired shooters
+  Added USPSA# as part of user name in expired classification email addresses
+  Dramatically improve right-click/drag'n-drop behavior
+
+2015/08/06.02
+  Added creating window with list of email addresses for expired shooters
+
+2015/08/06.01
+  Improved USPSA classification update process (handles prefix changes)
+
+2015/08/02.01
+  Fixed issue with invalid USPSA#'s in classification update
+  Added ignoring of PEN USPSA#'s in classification update
+  Added specifying different per-division payback schedules to USPSA projection report 
+  Added display of what percentage each division represents to USPSA projection report
+
+2015/08/01.01
+  Added ability to print classification update results to printer
+  Fixed USPSA classification update to check website for competitors not in ez_class_update.txt file
+
+2015/07/31.01
+  Added ability to click on USPSA or SCSA # (or name in USPSA) in classification update results window
+  Added Reports->Projection (USPSA only) view to calculate match payouts
+
+2015/07/27.01
+  Removed default Steel Challenge penalties due to PS issues with penalty merging
+
+2015/07/25.01
+  Added Config->Download for specifying saving match PINs by default, URLs for classification info
+  Added option to File->Download->cpc to override default match PIN save setting
+  Fixed File->Create New Match to work as expected
+  Fixed unsupported match types to return error (hopefully no crashing)
+  Edit/View->Match should work correctly (still uses old interface)
+  Fixed errors in calls to get configuration settings
+  
+2015/07/24.01
+  Classifications updates are more verbose, smarter (hopefully)
+  Added option to Config->Startup to enable/disable populating autofill database
+
+2015/07/23.02
+  Fixed to exclude Steel Challenge rimfire and shotgun divisions in classification update
+  Added notifying other pages when when classification update changes competitor info
+  Changed format of shooter name to last, first in classification update window
+  Eliminated display duplicate Steel Challenge updates (when a shooter has multiple guns registered)
+
+2015/07/23.01
+  Classification updates work for USPSA, Steel Challenge
+  Fixed Config-> screen controls to be more consistent size 
+
+2015/07/20.01
+  Fixed issue with File->File->Load and File->DB->Load not doing initial sort correctly
+  Increased crash stack back trace to infinity (and beyond)
+  Fixed issue when merging Steel Challenge matches with penalties
+
+2015/07/18.01
+  Added option to correct name case when download match from clubs.practiscore.com
+
+2015/07/17.02
+  Fixed issue with missing division flipping code causing crash on startup
+  Added support to scrape classifications from the SteelChallenge.com website
+  Fixed issue with Steel Challenge stage pop-up editing not setting classification correctly
+
+2015/07/17.01
+  Added fixup code for clubs.practiscore.com matches
+  Changed match pins list to sort by match name
+
+2015/07/16.03
+  Changed column header for 'Classification' back to 'Classifier'
+  Defaulted 'Outer Limits' and 'Speed Option' to being classifiers
+
+2015/07/16.02
+  Fixed issue with validation errors not hidden when classifier selected
+  Changed column header for 'Classifier' to 'Classification'
+
+2015/07/16.01
+  Updated packages to latest versions (backbone, jquery, lodash, momentjs, sprintf)
+  Fixed initial screen size issue in Manage->Devices when no devices present
+  Added label printing to Steel Challenge
+  Added defaulting competitor and stage editing to popup or inline (Config->UI)
+  Added show/hide DQed/deleted to edit competitor view
+  Selecting a classifier name now forces name, strings and classifier field
+
+2015/07/15.03
+  Fixed double-click pop-up editing not working in Steel Challenge stage editor
+
+2015/07/15.02
+  Defaulted stage strings to 5 when creating new Steel Challenge stage
+  Changed 'Missed Stop Plate' penalty to 'Miss Stop Plate'
+
+2015/07/15.01
+  Added saving match download PINs on File->Download->clubs.practiscore.com view
+  Fixed to disable all auto-polling devices when match synced from Manage->Devices
+  Centered overwrite checkbox and text on File->File->Save view
+  Fixed match name display on File->File->Save view (stripped instead of long)
+  Added support for downloading EZWS classification file
+
+2015/07/14.03
+  Added remapping of long match division names to short names
+  Fixed issue with setting single/multiple penalty state
+
+2015/07/14.02
+  Fixed issue with stage_deleted not being parsed
+  Added default Steel Challenge penalties (miss, procedural, missed stop plate)
+
+2015/07/14.01
+  Fixed issue with duplicated shooters
+  Fixed issue when device synced from had more penalties or bonuses in array than PMM
+  Added support for Edit/View->Squads for Steel Challenge
+  Improved File->File->Save filename validation
+
+2015/07/13.01
+  Added support for context menu stage delete/undelete
+  Added context menu support for device functions
+  Added support to hide/unhide devices
+  Fixed issue with mDNS crash under Avahi
+  Fixed text width calculation in Steel Challenge View/Edit->Scores
+  Fixed issue with trailing unique ID in device name not being 8 digits
+
+2015/07/11.01
+  Fixed device name, match name column to resize to minimum required width
+  Fixed device grid to resize to vertical space
+  Fixed issue with not restarting services properly when changing server and device configuration
+  Added Bonjour announcement for PMM
+
+2015/07/10.01
+  Fixed sorting of stage times in overall view
+  Added tooltip over 'Stage #x' text in overall view
+  Continued improvements in Steel Challenge stage editing
+
+2015/07/09.01
+  Added support for downloading matches from clubs.practiscore.com
+  Begin adding support for Steel Challenge stage editing
+
+2015/07/08.01
+  Added validation checking to division and class fields (inline and popup)
+  Added remapping long division names to abbreviation 
+  Fixed grid height calculations in View/Edit->Competitors
+  Fixed grid height calculations in File->File->Load and File->DB->Load
+
+2015/07/07.02
+  Fixed to display only number of strings in stage in Steel Challenge
+  Fixed issue with sh_pos not updating when shooter saved
+  Fixed size of sync confirmation dialog window
+
+2015/07/07.01
+  Fixed scan time error message in Config->Devices
+  Gradual improvements in Steel Challenge scoring
+
+2015/07/01.01 
+  Gradual improvements in Steel Challenge scoring
+
+2015/06/30.01 
+  Fixed issue with editing a competitor and clicking back into the cell being edited
+  Fixed issue with Steel Challenge stage times not capped at 30 seconds
+  Gradual improvements in Steel Challenge scoring
+
+2015/06/29.01 
+  Prelimary SC scores display
+
+2015/06/24.01
+  Begin adding Steel Challenge scores view
+  Fixed themeing on 'Clear Filters' and 'Reset Sort' buttons
+  Fixed menu not to have focus on page load
+  Changed log:log messages to show menu selection (e.g., File->File->Load Match)
+
+2015/06/23.02
+  Rearranged label utilization sub-menu
+  Refactored label code to make label engine reusable
+  Added Help->System info page to display interface addresses with sync codes
+
+2015/06/23.01
+  Start adding Steel Challenge support (edit competitors, match progress)
+
+2015/06/22.01
+  Changed popup editor, popup squads and context menu to deferred initialization
+  Updated File->File->Save to use new method
+
+2015/06/20.01
+  Added option to collate stage labels when more than 1 label per stage selected
+
+2015/06/19.02
+  Added packet label format to label types
+  Switched verification label to first name last name
+
+2015/06/19.01
+  Fixed phone number and zipcode to strip all non-numeric characters
+  Changed references to EZWS # to competitor number in labels
+  Added support for setting, resetting, and resequencing EZWS numbers
+
+2015/06/18.02
+  Fixed error with queued labels option not disabled when no labels queued
+  Competitors with no age, class, division or PF defaulted to Adult, U, Open, Minor
+
+2015/06/18.01
+  Fixed clipping issue with labels, so overly long fields don't stomp adjacent labels
+  Disabled menu items that aren't yet functional
+
+2015/06/17.01
+  Added competitor verification label
+
+2015/06/16.01
+  Added Cherokee IPSC custom awards report
+  Updated splash page
+
+2015/06/15.02
+  Added ability to print address labels
+
+2015/06/15.01
+  Added ability to queue labels for printing from edit/view competitors
+  Added sorting capability to label printing"
+
+2015/06/14.02
+  Fixed issue with starting next competitor at top column, new page
+  Fixed issue with exception caused by validating comma separated fields
+  Added jqx-all.pretty.js to repository for debugging edit competitor page
+
+2015/06/14.01
+  Fixed issue awards reports settings not being reloaded correctly
+  Fixed issue with classes & category awards
+  Added reporting browser-side errors to server (only a few modules, currently) 
+
+2015/06/12.01
+  Changed page-specific help system to a pop-up window
+
+2015/06/11.02
+  Fixed issue with page switching to awards after sync
+  Added rudimentary 'help' framework
+
+2015/06/11.01
+  Fixed TOC links to jump to section header instead of first table on awards page
+  Added ability to suppress sections with no qualifying entries on awards page
+  Fixed disconnect/reconnect to clear old data on awards page
+  Fixed awards page to hide sections on initial load for prettier user experience
+
+2015/06/10.01
+  Awards UI and display working (needs lots of testing, though)
+
+2015/06/08.01
+  Continued UI improvements to awards reports
+
+2015/06/05.02
+  Added saving print configuration on a per-match basis (saves when 'Print Preview' clicked)
+
+2015/06/05.01
+  Fixed issue with hortizontal line artifact when switching between paged and scroll modes
+  Fixed issue with window sizing when switching between paged and scroll modes
+  Fixed label UI to actually control label printing
+  Removed Zack Jones option under Reports->Labels->Stage Labels (already prints competitor #)
+  Added Reports->Labels->Label Alignment option to include printing outline of label
+  Fixed issue with Reports->Labels when no stages and/or competitors defined
+
+2015/06/04.01
+  Added ability to switch between pages and scroll competitor editing
+  Added ability to switch between inline and popup competitor editing from context menu
+  Added number of competitor that will be added when context menu opened
+  Fixed issue where validation hints may be left displayed if escape used to close competitor add window
+  Fixed to ensure newly added competitor is visible on screen
+  Fixed right-click context menu to highlight entire competitor line instead of just the cell
+  Removed Utilities->Test menu option (for now)
+  Added new fields to Utilities->JSON Checker
+  More changes on Reports->Labels UI
+
+2015/06/03.01
+  Converted File->Database->Load page to new style
+  Converted File->Import->Shoot'n-Score-It->Registration page to new style
+  Fixed brief appearance of odd-sized grid when first entering File->File->Load page
+  Removed File->Database->Delete option from menu (use right-click in File->Database->Load)
+  Fixed Manage->Devices to use jqWidgets window for sync confirmation
+  Tinkered with UI for USPSA label printing
+
+2015/06/02.01
+  Improved performance of name-casing by moving it to the server side
+  Added support for present, paid and staff fields (in current iOS beta)
+  Fixed match file load page to display 'Loading match...' while loading match
+  Added display of spinning load element while loading match
+  Fixed auto-suggestions of names to work correctly other than on just localhost
+  Added support for themes via Config->UI (only new style pages support themes)
+  Added ability to enable/disable menus auto-opening via Config->UI
+
+2015/06/01.02
+  Fixed name case normalization for names like 'Tommy Lee Jones' not capitalizing 'Lee'
+  Fixed case where a name with 'y' as the only vowel was not cased correctly
+  Added special case for last name 'Le' (NameCase converts to 'le', assuming 'le Monarch')
+  Added option to context menu to normalize entire match
+
+2015/06/01.01
+  Fixed issue with Config->Devices->Listen for Bonjour not sticking
+  Converted match file load page to jqWidgets library
+  Added ability to delete match from match file load page
+
+2015/05/30.01
+  Much rearrangement of options and code
+  Configuration options should now take effect more or less immediately (Startup and Theme do not do anything)
+  Manage->Sync is now Manage->Devices
+  Config->PractiScore is now Config->Server
+  Config->Polling is now Config->Devices
+  Config->Network has been consolidated into Config->Devices
+
+2015/05/29.02
+  Changed all occurrences of 'Practiscore' to 'PractiScore'
+  Fixed to allow up to 32 character names for server name in configuration page
+  Added a rule to enforce name ending in :nnnnnn in configuration page
+
+2015/05/29.01
+  Configuration options now saved to pme.sql
+
+2015/05/28.01
+  Configuration menu items should all work, except for 'theme'
+  Added loading and saving messages when loading or saving matches
+
+2015/05/23.01
+  Fixed bug with syncing match from device that was introduced
+  Fixed to close confirmSync dialog on server disconnect in device sync page
+  Fixed match progress page to hide menu when in kiosk mode
+  Display no competitors message for squad pop-up when no competitors present
+  Moved PMM section from center of screen to right side of menu bar
+  Added 'seconds remaining' counter to sync scan function
+  Added sync code tooltip when hovering over IP address in sync page
+  Added 'obliterate' to context menu (doesn't actually do anything yet)
+  Added tooltips to obliterate and normalize case entries in context menu
+  Fixed context editor to select cell when opened
+  Various CSS cleanups
+
+2015/05/22.01
+  Fixed to populate names database as matches are loaded (still slightly hackish)
+  Changed auto-complete to use names from database
+
+2015/05/21.01
+  Fixed width of drop-down list for auto-complete dynamic
+
+2015/05/20.04
+  Fixed issue with pop-up editing jumping to 'Last Name' field after every change
+
+2015/05/20.03
+  Reversed first and last name fields on pop-up add/edit window
+  Forced focus to last name field with pop-up add/edit window opened
+
+2015/05/20.02
+  Fixed squad number sorting in squadding pop-up
+  Fixed to populate squad field when squad or competitor is clicked
+
+2015/05/20.01
+  Added preliminary auto-fill when adding new competitors
+
+2015/05/19.01
+  Another attempt at getting editing right...
+
+2015/05/18.03
+  Fixed (again...) pop-up/inline editing
+
+2015/05/18.02
+  Added filter enable/disable button to competitor editing screen (disabled by default, for speed)
+
+2015/05/18.01
+  Clean up disconnect messages if server disconnects
+  Fixed issue with warning remaining displayed when canceling pop-up add/edit
+  Removed message '(No competitors defined)' so competitors can be added to empty match
+  Fixed menu layout in regards to screen width
+
+2015/05/17.01
+  Added ability to add competitors to match
+  Fixed issue with USPSA # validation in pop-up editor
+  Fixed several issues with pop-up editor
+
+2015/05/15.01
+  Changed all occurrences of 'PME' to 'PMM'
+  Commented out 'odbc' in package.json file (not worrying about EZWS databases for a while)
+  Reworked sync page to use jqWidgets
+
+2015/05/13.02
+  Added round-trip time display
+
+2015/05/13.01
+  Fixed state filter to only populate drop-down with states present in match
+  Changed competitor #, squad and EZWS # fields to do exact instead of partial match
+  Added clear filters button
+  Added reset sort button
+  Changed empty state filter to say '(no state)'
+  Changed 'Limited-10' to 'Limited_10' to prevent filter breakage
+
+2015/05/12.03
+  Added Zack's IP address to default IP address list
+  Changed filter method for drop-down list columns
+
+2015/05/12.02
+  Changed 'parseDate' to 'parsedate' to fix filtering error
+  Added tests to prevent 'Unncaught TypeError: Cannot read property 'toString' of null' errors
+
+2015/05/12.01
+  Moving out of a non-drop-down list in inline editing now ends editing mode
+
+2015/05/11.02
+  Fixed (hopefully) issue with return key resetting form in pop-up editor
+  Fixed issue with EZWS # -1 causing a duplication warning in pop-up editor
+
+2015/05/11.01
+  Fixed issue with USPSA number validation in inline editor
+  Fixed issue with phone number being improperly formatted in pop-up editor
+
+2015/05/10.02
+  Fixed issue with EZWS # -1 causing a duplication warning
+  Fixed issue with validation of USPSA number in pop-up editor
+
+2015/05/10.01
+  Fixed inline and popup competitor editing (inline tabbing when editing is weird)
+
+2015/05/08.01
+  Changed theme from 'energyblue' to 'darkblue'
+  Fixed title on pop-up editing window
+
+2015/05/07.02
+  Changed pop-up editing window title to include shooter #, first name, last name
+  Added checking for duplicate EZWS # in pop-up editing
+
+2015/05/07.01
+  Fixed issue with EZWS # being unchangable once set to -1
+  Removed up/down spinner from USPSA #, EZWS #
+  Added email and SMS logging controls to pop-up editing form
+
+2015/05/06.02
+  Fixed issue with pop-up editing phone number field displaying previous phone number if current phone number empty
+
+2015/05/06.01
+  Changed competitor editing grid to display in multiple of 5 rows
+  Changed menu bar to not run off edge of screen
+  Fixed create match to not crash PMM (reports back that match can't yet be created)
+  Changed how squad move is done internally, so that a change list is output to terminal
+
+2015/05/05.02
+  Fixed issue with match_logtoken being undefined crashing PMM
+  Fixed issue with phone number not having underscores removed
+
+2015/05/05.01
+  Fixed "mergeCompare(): Object format is not isFinite, isString or isArray for field 'match_logenabled'" warning
+  Strip leading and trailing spaces from fields when editing
+  Force power factor to minor when production division selected
+  Fixed kiosk errors
+  Added right-click context menu to competitor editing screen

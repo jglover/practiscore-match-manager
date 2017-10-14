@@ -1,0 +1,14 @@
+extends /layout
+
+append head
+  script(src='/javascripts/libs/jquery.history.min.js')
+  script(src='/javascripts/pmelib/common.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+
+block content
+  div#help-page-id edit-scores-uspsa
+  h1#section Edit Scores
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    #scores

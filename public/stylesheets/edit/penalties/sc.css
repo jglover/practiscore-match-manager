@@ -1,0 +1,13 @@
+#content {
+  overflow: hidden;
+}
+
+#fileGrid {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#msgDiv {
+  margin-top: 16px;
+  text-align: center;
+}

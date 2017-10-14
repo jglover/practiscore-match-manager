@@ -1,0 +1,187 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/pmelib/labelengine.js')
+
+block content
+  div#help-page-id reports-labels-sc
+  h1.hideondisconnect.no-print#section Competitor Labels
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect.no-print#content
+    p(style='display: none;' no-competitors-show) Labels not available, no active competitors in match!
+    div(no-competitors-hide)
+      h3 Stage Labels
+      p(style='display: none;' no-stages-show) Stage labels not available, no active stages defined.
+      table(no-stages-hide).config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Print labels for stages
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected config-save)#checkbox-labels-enabled-stage
+        tr(no-stage-labels-hide).odd
+          td
+            span.tleft Number of labels per stage
+            span.tright: div(controltype='numberinput' config-save)#numberinput-labels-copies-stage
+        tr(no-stage-labels-hide one-stage-label-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Collate labels (1,2,3,1,2,3 instead of 1,1,2,2,3,3)
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' one-stage-label-disable config-save)#checkbox-labels-collate-stage
+        tr(no-stage-labels-hide).odd#td-labels-stage-labels-all
+          td
+            span(style='margin-top: -1px;').tleft Print labels for all stages
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='1' radiobutton-is-selected config-save)#radiobutton-labels-stage-labels-all
+        tr(no-stage-labels-hide).even
+          td
+            span(style='margin-top: -1px;').tleft Print labels for selected stages
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='1' config-save)#radiobutton-labels-stage-labels-select
+        - var rowShade = 'odd'
+        each stage, index in match.m.match_stages
+          tr(no-stage-labels-hide all-stages-selected-hide class=`${rowShade}`)
+            td
+              span(style='margin-top: -1px; margin-left: 20px' id=`checkbox-stage-select-name-${index}`).tleft= stage.stage_name
+              span(style='margin-top: 2px;').tright: div(id=`checkbox-stage-select-number-${index}` controltype='checkbox' checkbox-is-selected config-save)
+          - rowShade = (rowShade === 'even') ? 'odd' : 'even'
+
+      h3 Spare Labels
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Print spare labels
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' config-save)#checkbox-labels-enabled-spare
+        tr(no-spare-labels-hide).odd
+          td
+            span.tleft(style='margin-top: 2px;') Number of spare labels
+            span.tright: div(controltype='numberinput' config-save)#numberinput-labels-copies-spare
+
+      h3 Verification Labels
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Print verification labels
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' config-save)#checkbox-labels-enabled-verification
+        tr(no-verification-labels-hide).odd
+          td
+            span.tleft(style='margin-top: 2px;') Number of verification labels
+            span.tright: div(controltype='numberinput' config-save)#numberinput-labels-copies-verification
+
+      h3 Address Labels
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Print address labels
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' config-save)#checkbox-labels-enabled-address
+        tr(no-address-labels-hide).odd
+          td
+            span.tleft(style='margin-top: 2px;') Number of address labels
+            span.tright: div(controltype='numberinput' config-save)#numberinput-labels-copies-address
+
+      h3 Packet Labels
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Print packet labels
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' config-save)#checkbox-labels-enabled-packet
+        tr(no-packet-labels-hide).odd
+          td
+            span.tleft(style='margin-top: 2px;') Number of packet labels
+            span.tright: div(controltype='numberinput' config-save)#numberinput-labels-copies-packet
+
+      h3 Print Order
+      table.config
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Down then across
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='2' no-labels-disable-rb radiobutton-is-selected config-save)#radiobutton-labels-order-down-across
+        tr(no-labels-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Across then down
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='2' no-labels-disable-rb config-save)#radiobutton-labels-order-across-down
+
+      h3 Label Utilization
+      table.config
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Next competitor starts on new sheet
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='3' no-labels-disable-rb radiobutton-is-selected config-save)#radiobutton-labels-next-sheet
+        tr(no-labels-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Next competitor starts at
+              span#radiobutton-labels-next-column-text-top-beginning top
+              |  of next
+              span#radiobutton-labels-next-column-text-column-row column
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='3' no-labels-disable-rb config-save)#radiobutton-labels-next-column
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Next competitor starts on next label
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='3' no-labels-disable-rb config-save)#radiobutton-labels-next-label
+        tr(no-labels-fade use-next-label-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Print left-over labels as spares
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' no-labels-disable-cb use-next-label-disable config-save)#checkbox-labels-leftovers-as-spares
+
+      h3 Label Selection
+      table.config
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Print labels for all competitors
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='4' no-labels-disable-rb no-queued-labels-selected radiobutton-is-selected config-save)#radiobutton-labels-print-all
+        tr(no-labels-fade no-queued-labels-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Print labels queued from edit/view competitors (<span id='queued-label-count'>0</span> ready)
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='4' no-labels-disable-rb no-queued-labels-disable-rb config-save)#radiobutton-labels-print-queued
+        tr(no-labels-fade no-queued-labels-fade print-all-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Clear print queue after printing
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' no-labels-disable-cb no-queued-labels-disable-cb print-all-labels-disable config-save)#checkbox-labels-print-clearqueue
+
+      h3 Label Sorting
+      table.config
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Sort by last name, first name
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='5' no-labels-disable-rb radiobutton-is-selected config-save)#radiobutton-labels-sort-name
+        tr(no-labels-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Sort by competitor number
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='5' no-labels-disable-rb config-save)#radiobutton-labels-sort-cnum
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Sort by squad number, last name, first name
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='5' no-labels-disable-rb config-save)#radiobutton-labels-sort-squadname
+        tr(no-labels-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Sort by squad number, competitor number
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='5' no-labels-disable-rb config-save)#radiobutton-labels-sort-squadcnum
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Do not sort
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='5' no-labels-disable-rb config-save)#radiobutton-labels-sort-none
+
+      h3 Label Alignment
+      table.config
+        tr(no-labels-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Print outline of label
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' no-labels-disable-cb config-save)#checkbox-labels-outline
+        tr(no-labels-fade).odd
+          td
+            span.tleft(style='margin-top: 2px;') Vertical jog (+ is up, - is down)
+            span.tright: div(controltype='joginput' no-labels-disable-jog config-save)#joginput-labels-vjog
+        tr(no-labels-fade).even
+          td
+            span.tleft(style='margin-top: 2px;') Horizontal jog (+ is right, - is left)
+            span.tright: div(controltype='joginput' no-labels-disable-jog config-save)#joginput-labels-hjog
+
+      p
+      button#button-print-preview.
+        Print Preview
+      p(style='text-align: justify;')
+        | To correctly print the labels, when the print preview dialog is
+        | presented, set the layout to portrait, paper size to letter, and
+        | margins to none. Use Staples 1" x 2 5/8" labels or other Avery
+        | 5160 equivalent (Avery labels are not recommended because the
+        | "Easy Peel" leaves adhesive exposed).
+
+      p (Printing is only supported when using the <a href="https://www.google.com/chrome/browser" target="_blank">Chrome</a> browser)
+
+  div.no-screen#labels

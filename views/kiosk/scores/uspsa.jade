@@ -1,0 +1,14 @@
+extends /layout
+
+append head
+  script(src='/javascripts/libs/jquery.history.min.js')
+  script(src='/javascripts/pmelib/common.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+  script(src='/javascripts/edit/scores/' + pmmmatchtypejs)
+  script(src='/javascripts/kiosk/kiosk.js')
+
+block content
+  include /disconnect
+
+  div#content
+    #scores

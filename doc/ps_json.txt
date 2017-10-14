@@ -1,0 +1,108 @@
+Timestamps differ between iOS and Android. There's a space after the day of month in iOS
+
+match_def.json
+  match_approvescores   -- True if score approval necessary
+  match_bonuses         -- Array of match bonuses (time-plus, etc)
+  match_cats            -- Array of match categories (ltd, ltdten, open, prod, rev, ss, tact)
+  match_cls             -- Array of classes (a, b, c, d, g, m, u, x)
+  match_creationdate    -- Date match was created
+  match_date            -- Match date
+  match_id              -- Unique identifier of match
+  match_logenabled      -- True if logging enabled
+  match_modifieddate    -- Date match last modified
+  match_name            -- Match name
+  match_owner           -- Boolean, 1 if owner (iOS only)
+  match_penalties       -- Array of match penalties (time-plus, etc)
+  match_readonly        -- True if match cannot be modified, false otherwise (iOS only)
+  match_shooters        -- Array of match competitors, see match_shooters.match_def.json
+  match_stages          -- Array of match stages, see match_stages.match_def.json
+  match_type            -- Match type, uspsa_p == pistol
+  version               -- PS version (iOS only)
+
+  app_version           -- PS version (Android only)
+  device_arch           -- Device architecture (Android only)
+  os_version            -- OS version (Android only)
+  device_model          -- Device make/model (Android only)
+
+match_shooters.match_def.json:
+  mod_dl   -- Timestamp sh_del last modified
+  mod_dq   -- Timestamp sh_dq last modified
+  mod_dv   -- Timestamp sh_dvp last modified
+  mod_pf   -- Timestamp sh_pf last modified
+  mod_pr   -- Timestamp shooter profile modified (_id, _ln, _fn, _gen, _age, _grd, _eml, _law, _mil, _frn, _ph)
+  mod_sq   -- Timestamp sh_sqd last modified
+  sh_age   -- Shooter age (Adult, Junior, Senior, Supsnr)
+  sh_del   -- True if shooter deleted, otherwise false
+  sh_dq    -- True if shooter DQ'ed, otherwise false
+  sh_cc    -- Country code (region)
+  sh_dvp   -- Division (PROD, SS, LTDTEN, LTD, OPEN, REV)
+  sh_eml   -- Email address
+  sh_fn    -- First name
+  sh_frn   -- True if foreign, otherwise false
+  sh_gen   -- Gender (Male, Female)
+  sh_grd   -- Shooter 'grade' (class)
+  sh_id    -- USPSA number (or blank)
+  sh_law   -- True if LEO, otherwise false
+  sh_lge   -- True to send logged score to email
+  sh_lgp   -- True to send logged score to phone
+  sh_ln    -- Last name
+  sh_mil   -- True if military, otherwise false
+  sh_mod   -- Timestamp any shooter last modified
+  sh_num   -- Shooter number
+  sh_pf    -- Power factor (MAJOR or MINOR)
+  sh_ph    -- Phone number
+  sh_sqd   -- Squad number
+  sh_uid   -- Unique ID of shooter (duplicate of sh_uuid)
+  sh_uuid  -- Unique ID of shooter (duplicate of sh_uid)
+  sh_wlk   -- True if walk-on, otherwise false
+ 
+  sh_random -- Random number (Android only)
+
+match_stages.match_def.json:
+  stage_classifiercode -- Classifier number (CM 09-03)
+  stage_classifier     -- True if classifier stage, otherwise false
+  stage_modifieddate   -- Date of last modification
+  stage_name           -- Name of stage
+  stage_noshoots       -- True if no-shoots present, otherwise false
+  stage_number         -- Stage number
+  stage_poppers        -- Number of poppers
+  stage_scoretype      -- Scoring type (Comstock, Virginia, Fixed time)
+  stage_strings        -- Number of strings in stage
+  stage_targets        -- Array of targets, see stage_targets.match_stages.match_def.json
+  stage_tppoints       -- Total stage points
+  stage_uuid           -- Unique identifier of stage
+
+stage_targets.match_stages.match_def.json:
+  target_deleted   -- True if target deleted, otherwise false
+  target_maxnpms   -- Maximum number of no-penalty mikes
+  target_number    -- Target number
+  target_reqshots  -- Minimum number of hits on target
+
+match_scores.json:
+  match_id         -- Unique ID of match (should match match_id.match_def.json
+  match_scores     -- Array of scores, see match_scores.match_scores.json
+
+match_scores.match_scores.json:
+  stage_number      -- Number of this stage
+  stage_stagescores -- Array of stage scores (see stage_scores.match_scores.match_scores.json)
+  stage_uuid        -- Unique ID of stage (should match stage_uuid.match_stages.match_def.json)
+
+match_scores.match_scores.match_scores.json:
+  apen -- Additional penalties
+  aprv -- True if approved, false if not (requires match_approvescores=true)
+  bons -- Array of bonuses
+  dnf  -- True if shooter did not fire 
+  mod  -- Timestamp of last modification to this score
+  pens -- Array of penalties (?)
+  poph -- Hits on poppers
+  popm -- Mikes on poppers
+  proc -- Procedurals
+  shtr -- Unique ID of shooter this score is for
+  str  -- Array of string times
+  ts   -- Array of hits per target
+
+Target scoring variable value:
+  0000-0000-0000-0000-0000-0000-0000-0000
+   N/A  NPM    M   NS    D    C    B    A  
+
+Dates are in UTC, formatted as 2014-04-28 02:32:26.183

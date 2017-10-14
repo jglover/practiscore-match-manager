@@ -1,0 +1,34 @@
+extends /mobile_layout
+
+block head
+  link(rel='stylesheet', href='/theme/jquery-ui/jquery-ui.min.css')
+  link(rel='stylesheet', href='/stylesheets' + path + '.css')
+  script(src='/javascripts/libs/jquery.min.js')
+  script(src='/javascripts/libs/jquery-ui.min.js')
+  script(type='text/javascript').
+    $(function () {
+      $('a').button ();
+
+      var maxWidth = Math.max.apply (null, $('.ui-button').map (function () {
+        return $(this).outerWidth (true);
+      }).get ());
+
+      $('.ui-button').css ({'width': maxWidth, 'text-align': 'left'});
+    });
+
+block content
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    div#error
+      if (!shootersList.length)
+        p No competitors  defined in match!
+      if (error)
+        p #{error}
+
+    div#competitors
+      table.center
+        each shooter, i in shootersList
+          tr
+            td
+              a(href='/mobile/#{thisStage}/#{thisSquad}/#{shooter.sh_uid}') #{shooter.sh_ln}, #{shooter.sh_fn}

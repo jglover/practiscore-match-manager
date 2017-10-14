@@ -1,0 +1,32 @@
+extends /layout
+
+block content
+  div#help-page-id file
+  h1.hideondisconnect#section File Operations
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#help
+      <b>New Match</b> -- Create New Match
+      p
+
+      <b>Load/Save/Delete DB</b> -- Database Operations
+      ul
+        li <b>Load</b> -- Load a selected match from the database
+        li <b>Save</b> -- Save the current match to the database
+        li <b>Delete</b> -- Delete a selected match from the database
+
+      <b>Load/Save File</b> -- File Operations
+      ul
+        li <b>Load</b> -- Load a selected match from a .psc file
+        li <b>Save</b> -- Save the current match to a .psc file
+
+      <b>Import</b> -- Import EZWS & SSI Files
+      ul
+        li <b>Import EZWS</b> -- Import match from a EzWinScore database (Windows only)
+        li <b>Import SSI</b> -- Import match from a Shoot'n-Score-It zip file
+
+      <b>Export</b> -- Export EZWS & SSI Files
+      ul
+        li <b>Export EZWS</b> -- Export match to a EzWinScore database (Windows only)
+        li <b>Export SSI</b> -- Export match to a Shoot'n-Score-It zip file

@@ -1,0 +1,18 @@
+extends /mobile_layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets' + path + '.css')
+
+block content
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    div#error
+      if (!stageList.length)
+        p No stages defined for match!
+      else if (error)
+        p #{error}
+
+    div#score
+      p.
+        Now to score #{thisCompetitorInfo.sh_fn} #{thisCompetitorInfo.sh_ln} (Stage #{thisStage}, #{thisCompetitorInfo.sh_dvp}, #{thisCompetitorInfo.sh_pf})

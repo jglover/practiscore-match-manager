@@ -1,0 +1,53 @@
+#content {
+  width: 100%;
+  text-align: center;
+}
+
+#systemErrorDiv {
+  color: red;
+}
+
+#noFilesDiv {
+  color: red;
+}
+
+#loadMessageDiv {
+  text-align: center;
+}
+
+#loadButtonDiv {
+  text-align: center;
+}
+
+#loadButton {
+}
+
+.tablesorter {
+  font-size: 1.0em;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.tablesorter-jui thead td {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-header {
+  white-space: nowrap;
+  padding: 4px;
+}
+
+.tablesorter .tablesorter-filter-row {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-filter {
+  width: 80px;
+  padding: 1px;
+}
+
+.tablesorter-force-link {
+  text-decoration: underline;
+}

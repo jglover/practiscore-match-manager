@@ -1,0 +1,31 @@
+#content {
+  overflow: hidden;
+}
+
+#classesGrid {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#msgDiv {
+  margin-top: 16px;
+  text-align: center;
+}
+
+#btncontainer {
+  overflow: hidden;
+  position: relative;
+  margin: 0px;
+  padding-top: 3px;
+}
+
+div#btncontainer .btndiv {
+  float: left;
+  margin-left: 5px;
+}
+
+div#btncontainer .btnspan {
+  margin-left: 4px;
+  position: relative;
+  top: 2px;
+}

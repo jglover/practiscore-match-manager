@@ -1,0 +1,70 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-progress
+  h1.hideondisconnect#section Progress Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 Match Progress
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Show flare on table cell change
+            span(style='margin-top: 2px;').tright: div#ex-progressFlare
+
+      p
+      h3 Cell Colors
+      table.config
+        tr.even
+          td
+            span.tleft No scores
+            span.tright
+              div#ec-progressColorEmpty
+                div(style='padding: 3px;')
+                  div#cp-progressColorEmpty
+        tr.odd
+          td
+            span.tleft In progress
+            span.tright
+              div#ec-progressColorProgress
+                div(style='padding: 3px;')
+                  div#cp-progressColorProgress
+        tr.even
+          td
+            span.tleft Completed w/ no DNF scores
+            span.tright
+              div#ec-progressColorComplete
+                div(style='padding: 3px;')
+                  div#cp-progressColorComplete
+        tr.odd
+          td
+            span.tleft Completed w/ DNF scores
+            span.tright
+              div#ec-progressColorCompleteDNF
+                div(style='padding: 3px;')
+                  div#cp-progressColorCompleteDNF
+        tr.even
+          td
+            span.tleft Missing scores
+            span.tright
+              div#ec-progressColorCompleteMissing
+                div(style='padding: 3px;')
+                  div#cp-progressColorCompleteMissing
+        tr.odd
+          td
+            span.tleft Data error
+            span.tright
+              div#ec-progressColorError
+                div(style='padding: 3px;')
+                  div#cp-progressColorError
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

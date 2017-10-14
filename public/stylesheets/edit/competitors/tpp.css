@@ -1,0 +1,53 @@
+/*
+**  Row and cell highlighting
+*/
+.red {
+  background: initial !important;
+  background-color: red !important;
+}
+
+.yellow {
+  background: initial !important;
+  background-color: yellow !important;
+}
+
+#competitorMessage {
+  text-align: center;
+}
+
+.tablesorter {
+  font-size: 1.0em;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.tablesorter-jui thead td {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-header {
+  white-space: nowrap;
+  padding: 4px;
+}
+
+.tablesorter .tablesorter-filter-row {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-filter {
+  width: 80px;
+  padding: 1px;
+}
+
+.tlabel {
+  text-align: right;
+}
+
+.tspace {
+  padding-left: 10px;
+}
+
+.tinput {
+}

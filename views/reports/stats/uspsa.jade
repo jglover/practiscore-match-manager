@@ -1,0 +1,60 @@
+extends /layout
+
+append head
+  script(src='/javascripts/pmelib/textwidth.js')
+  script(src='/javascripts/pmelib/common.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+
+block content
+  div#help-page-id reports-statistics-uspsa
+  h1.hideondisconnect.no-print#section Statistics Report
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect.no-print#content
+    div(style='display: none;').hideondisconnectex#settings
+      h3 Hosting Club Information
+      table.settings
+        tr.even
+          td
+            span(style='margin-top: 2px;').tleft Club Name
+            span(style='margin-right: -4px;').tright: input(type='text' controltype='textinput' textinput-width='300' textinput-maxlen='40' settings-save)#textinput-club-name
+        tr.odd
+          td
+            span(style='margin-top: 2px;').tleft USPSA Club Code
+            span(style='margin-right: -4px;').tright: input(type='text' controltype='textinput' textinput-width='60' textinput-maxlen='6' settings-save)#textinput-club-code
+
+      h3 Statistics Settings
+      table.settings
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Show overall totals
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-print-overall
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Show division totals
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-print-division
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Show class totals
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-print-class
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Show category totals
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-print-category
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Show state totals
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-print-state
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Show area totals
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' checkbox-is-selected settings-save)#checkbox-print-area
+
+      p
+        button(style='margin-right: 5px;' controltype='button' button-width='105')#button-screen.
+          On Screen
+        button(style='margin-left: 5px;' controltype='button' button-width='105')#button-print-preview.
+          Print Preview
+      p (Printing is only supported when using the <a href='https://www.google.com/chrome/browser' target='_blank'>Chrome</a> browser)
+
+  div.no-screen#statistics

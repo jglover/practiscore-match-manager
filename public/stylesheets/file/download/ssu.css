@@ -1,0 +1,60 @@
+#content {
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+}
+
+#saveForm {
+  display: inline-block;
+}
+
+table.config {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 350px;
+}
+
+table.config tr, table.config td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 360px;
+}
+
+table.config tr.even {
+  background: #fdfdfd;
+}
+
+table.config tr.odd {
+  background: #f3f3f3;
+}
+
+table.config td {
+  height: 27px;
+  width: 400px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}
+
+.textblock {
+  text-align: justify;
+}
+
+#msg {
+  display: none;
+}
+
+#errmsg {
+  color: red;
+  display: none;
+}

@@ -1,0 +1,45 @@
+extends /layout
+
+block content
+  div#help-page-id edit-stages-sc
+  h1.hideondisconnect#section Add/Edit Stages
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#stagesGrid
+
+  div(style='display: none;').hideondisconnectex#popupEdit
+    div Window Title
+    div(style='overflow: hidden;')
+      table
+        tr
+          td.tlabel Stage Name:
+          td.tinput: input(style='padding-left: 3px;')#ec-sh-name
+          td.tspace
+          td.tlabel Strings:
+          td.tinput: div#ec-sh-strings
+        tr
+          td.tlabel Classifier:
+          td.tinput: div#ec-sh-classifier
+          td.tspace
+          td.tlabel Classifier Code:
+          td.tinput: div#ec-sh-classifiercode
+
+      p
+      div(style='float: right')
+        button(style='margin-right: 4px;')#ec-resetButton Reset
+        button(style='margin-right: 4px;')#ec-cancelButton Cancel
+        button(style='margin-right: 3px;')#ec-saveButton Save
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li#contextEditStage Edit This Stage (#<span id='contextEditStageNum'>0</span>)
+      li#contextAddStage Add New Stage (#<span id='contextAddStageNum'>0</span>)
+      li#contextDeleteStage Delete This Stage (#<span id='contextDeleteStageNum'>0</span>)
+      li#contextUndeleteStage Un-delete This Stage (#<span id='contextUndeleteStageNum'>0</span>)
+
+      li Edit Mode
+        ul(style='width: 60px;')
+          li#contextEditModeInline Inline
+          li#contextEditModePopup Popup
+

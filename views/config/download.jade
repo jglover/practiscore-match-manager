@@ -1,0 +1,73 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-download
+  h1.hideondisconnect#section Download Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 clubs.practiscore.com
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Save match download PINs
+            span(style='margin-top: 2px;').tright: div#ex-cpcSavePINs
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Automatically correct case of names, addresses, etc.
+            span(style='margin-top: 2px;').tright: div#ex-cpcFixNameCase
+
+      h3 SquadSignup.com
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Save most recently used club
+            span(style='margin-top: 2px;').tright: div#ex-ssuSaveClub
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Save most recently used login credentials
+            span(style='margin-top: 2px;').tright: div#ex-ssuSaveCredentials
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Save most recently used match ID
+            span(style='margin-top: 2px;').tright: div#ex-ssuSaveMatchID
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Automatically correct case of names, addresses, etc.
+            span(style='margin-top: 2px;').tright: div#ex-ssuFixNameCase
+
+      h3 Steel Challenge
+      table.config
+        tr.even
+          td
+            span(style='margin-top: 2px;').tleft URL for Steel Challenge classifications page
+        tr.odd
+          td
+            span.tright: input(style='padding-left: 3px;')#ec-downloadUrlSC
+
+      h3 USPSA
+      table.config
+        tr.even
+          td
+            span(style='margin-top: 2px;').tleft URL for USPSA classifications file
+        tr.odd
+          td
+            span.tright: input(style='padding-left: 3px;')#ec-downloadUrlUSPSA
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Real-time verification of not-found USPSA#'s
+            span(style='margin-top: 2px;').tright: div#ex-downloadVerifyUSPSA
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Add not-found USPSA#'s to classification database
+            span(style='margin-top: 2px;').tright: div#ex-downloadAddVerifiedUSPSA
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

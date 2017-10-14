@@ -1,0 +1,11 @@
+{
+  "browser": true,
+  "jquery": true,
+  "eqeqeq": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "strict": true,
+  "undef": true,
+  "unused": true
+}

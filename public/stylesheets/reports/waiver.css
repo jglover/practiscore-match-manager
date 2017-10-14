@@ -1,0 +1,114 @@
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+/*
+**
+*/
+body {
+  font-family: Arial,Sans-Serif;
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#waiver {
+}
+
+.waiver-text {
+  text-align: justify;
+}
+
+/*
+**  Tables have thin lines, are centered on the page, and the cells are
+**  padded to make them less crowded.
+*/
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table {
+  border: 1px solid black;
+  table-layout: fixed;
+  width: 1017px;
+}
+th, td {
+  height: 25px;
+  border: 1px solid black;
+  overflow: hidden;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 18px;
+}
+th {
+  background-color: #ffffaa;
+}
+
+.even {
+}
+.odd {
+  background-color: #e0e0e0;
+}
+
+.th-number {
+  width: 40px;
+  text-align: center;
+}
+.th-lastname {
+  width: 150px;
+  text-align: center;
+}
+.th-firstname {
+  width: 150px;
+  text-align: center;
+}
+.th-uspsanum {
+  width: 90px;
+  text-align: center;
+}
+.th-rbgcmember {
+  width: 75px;
+  text-align: center;
+}
+.th-junior {
+  width: 75px;
+  text-align: center;
+}
+.th-signature {
+  width: 500px;
+  text-align: center;
+}
+
+.td-number {
+  text-align: right;
+}
+.td-lastname {
+  text-align: left;
+}
+.td-firstname {
+  text-align: left;
+}
+.td-uspsanum {
+  text-align: left;
+}
+.td-rbgcmember {
+}
+.td-junior {
+}
+.td-signature {
+}

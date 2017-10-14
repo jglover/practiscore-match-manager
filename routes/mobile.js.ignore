@@ -1,0 +1,185 @@
+'use strict';
+
+module.exports = function (app) {
+  var _ = require ('lodash');
+
+  app.get ('/mobile/:stage?/:squad?/:competitor?', function (req, res) {
+    var view;
+    var errorText;
+    var thisStage;
+    var thisSquad;
+    var thisCompetitor;
+    var thisCompetitorInfo = {};
+    var stageList = [];
+    var squadList = [];
+    var shootersList = [];
+    var matchData = app.ps.matchData;
+
+    var checkArg = function (a) {
+      var nonNumeric = /[^0-9]/;
+
+      if (typeof a === 'undefined')
+        return false;
+
+      if (nonNumeric.test (a))
+      {
+        errorText = 'number contains non-numeric characters (\'' + a + '\')';
+        return false;
+      }
+
+      return true;
+    };
+
+    //
+    //  Create lists
+    //
+    var buildStageList = function () {
+      _.each (
+        _.sortBy (matchData.m.match_stages, function (stage) {
+          return stage.stage_number * 1;
+        }),
+        function (stage) {
+          stageList.push ({number: stage.stage_number, name: stage.stage_name});
+        }
+      );
+    };
+
+    var buildSquadList = function () {
+      _.each (
+        _.sortBy (
+          _.map (
+            _.uniq (matchData.m.match_shooters, function (shooter) {
+              return (shooter.sh_sqd || 0) * 1;
+            }),
+            function (shooter) {
+              return (shooter.sh_sqd || 0) * 1;
+            }),
+          function (squad) {
+            return squad;
+          }),
+        function (squad) {
+          squadList.push ({number: squad, name:'Squad ' + squad});
+        }
+      );
+    };
+
+    var buildShootersList = function (squad) {
+      if (typeof squad === 'undefined')
+        return;
+
+      squad *= 1;
+
+      _.each (
+        _.sortBy (
+          _.filter (matchData.m.match_shooters, function (shooter) {
+            return (shooter.sh_sqd * 1) === squad;
+          }),
+          function (shooter) {
+            return shooter.sh_ln + shooter.sh_fn;
+          }),
+        function (shooter) {
+          shootersList.push ({sh_uid: shooter.sh_uid,
+                              sh_ln:  shooter.sh_ln,
+                              sh_fn:  shooter.sh_fn,
+                              sh_dvp: shooter.sh_dvp,
+                              sh_pf:  shooter.sh_pf,
+                              sh_id:  shooter.sh_id,
+                              sh_dq:  shooter.sh_dq,
+                             });
+        }
+      );
+    };
+
+    //
+    //
+    //
+    var checkStage = function () {
+      view = 'stage';
+      thisStage = req.route.params.stage;
+
+      if (!checkArg (thisStage))
+        return false;
+      if (!_.find (matchData.m.match_stages, {'stage_number': thisStage * 1})) {
+        errorText = 'Stage number does not exist';
+        return false;
+      }
+
+      return true;
+    };
+
+    var checkSquad = function () {
+      view = 'squad';
+      thisSquad = req.route.params.squad;
+
+      if (!checkArg (thisSquad))
+        return false;
+
+      if (!_.find (matchData.m.match_shooters, {'sh_sqd': thisSquad * 1})) {
+        errorText = 'Non-existent squad';
+        return false;
+      }
+
+      return true;
+    };
+
+    var checkCompetitor = function () {
+      var competitor;
+
+      view = 'shooters';
+      thisCompetitor = req.route.params.competitor;
+
+      if (typeof thisCompetitor === 'undefined')
+        return false;
+
+      if (!(competitor = _.find (matchData.m.match_shooters, {'sh_uid': thisCompetitor}))) {
+        errorText = 'Non-existent competitor';
+        return false;
+      }
+
+      thisCompetitorInfo = {
+        sh_uid: competitor.sh_uid,
+        sh_ln:  competitor.sh_ln,
+        sh_fn:  competitor.sh_fn,
+        sh_dvp: competitor.sh_dvp,
+        sh_pf:  competitor.sh_pf,
+        sh_id:  competitor.sh_id,
+        sh_dq:  competitor.sh_dq,
+      };
+
+      return true;
+    };
+
+    //
+    //
+    //
+    if (checkStage ())
+      if (checkSquad ())
+        if (checkCompetitor ())
+          view = 'score';
+
+    buildStageList ();
+    buildSquadList ();
+    buildShootersList (thisSquad);
+
+    // console.log ('--------\n');
+    // console.log ('thisStage', thisStage);
+    // console.log ('thisSquad', thisSquad);
+    // console.dir (stageList);
+    // console.dir (squadList);
+    // console.dir (shootersList);
+
+    res.render ('mobile/' + view, {
+      'path': '/mobile/' + view,
+      'error': errorText,
+      'stageList': stageList,
+      'squadList': squadList,
+      'shootersList': shootersList,
+      'thisStage': thisStage,
+      'thisSquad': thisSquad,
+      'thisCompetitor': thisCompetitor,
+      'thisCompetitorInfo': thisCompetitorInfo,
+      'matchname': app.ps.matchData.m.match_name,
+      'matchData': app.ps.matchData,
+    });
+  });
+};

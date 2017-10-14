@@ -1,0 +1,30 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/pmelib/labelengine.js')
+
+block content
+  div#help-page-id reports-ccr-uspsa
+  h1.hideondisconnect.no-print#section Competitor Change Request Cards
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect.no-print#content
+    p(style='text-align: justify;')
+      | The Competitor Change Request (CCR) form is designed to print on Avery
+      | 5388 stock. These are 3"x5" index cards, 3 per sheet, with perforations
+      | for separation.
+    p(style='text-align: justify;')
+      | The report produces 1 page of output (3 cards). To print additional cards,
+      | set number of copies to be the tota number of cards desired, divided by 3
+      | (e.g, to print 12 cards, print 4 copies).
+    p
+      button(controltype='button' button-width='105')#button-print-preview.
+        Print Preview
+    p(style='text-align: justify;')
+      | To correctly print the labels, when the print preview dialog is
+      | presented, set the layout to portrait, paper size to letter, and
+      | margins to none.
+    p
+      | (Printing is only supported when using the <a href='https://www.google.com/chrome/browser' target='_blank'>Chrome</a> browser)
+
+  div.no-screen#labels

@@ -1,0 +1,73 @@
+#content {
+  overflow: hidden;
+}
+
+#competitorsGrid {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.competitor {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right: 2px;
+  margin-left: 4px;
+  margin-top: 0px;
+}
+
+.competitorProduction {
+  color: #999;
+}
+
+.competitorCarryOptics {
+  color: #999;
+}
+
+.competitorDQ {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.competitorDel {
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+}
+
+.tlabel {
+  text-align: right;
+}
+
+.tspace {
+  padding-left: 4px;
+}
+
+.tinput {
+  text-align: left;
+}
+
+.cbItem {
+  float: left;
+  margin-right: 4px;
+}
+
+#btncontainer {
+  overflow: hidden;
+  position: relative;
+  margin: 0px;
+  padding-top: 3px;
+}
+
+div#btncontainer .btndiv {
+  float: left;
+  margin-left: 5px;
+}
+
+div#btncontainer .btnspan {
+  margin-left: 4px;
+  position: relative;
+  top: 2px;
+}

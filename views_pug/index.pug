@@ -1,0 +1,82 @@
+extends /layout
+
+block content
+  h1.hideondisconnect#section Main Menu
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#help
+      <b>Currently supported features:</b>
+      ul
+        li Load/save matches
+          ul
+            li Load/save match from database
+            li Load/save PractiScore .psc file from/to disk
+            li Download match from clubs.practiscore.com and SquadSignup.com
+            li Import Shoot'n-Score-It EZWS .zip file
+        li View/edit/add 
+          ul
+            li Categories
+            li Classes
+            li Competitors
+              ul
+                li Sort/filter
+                li Inline or pop-up editing
+                li Name-case normalization
+                li Set/resequence/reset EZWS #'s
+                li Add competitor to print list
+            li Divisions
+        li View
+          ul
+            li Logs
+            li Scores
+              ul
+                li Combined or by division
+                li Overall or per-stage
+                li Sort/filter results
+                li Detailed competitor results
+            li Stages
+        li Drag'n'drop squadding
+        li Automatic polling of stage devices
+        li Match progress display
+          ul
+            li Overall completion
+            li Color-coding (missing scores, DNF, etc)
+            li Pop-up list of completed, DNF, missing scores
+            li Dynamically updates as scoring devices are polled
+        li Label printing
+          ul
+            li Stage, chrono, spare, address, packet, verification
+            li Print all or selected competitors
+            li 5 different sorting options
+            li Print configuration saved for each match
+        li Awards report
+          ul
+            li National, Level III (area), II (state) and I (local)
+            li Highly configurable
+            li Configuration settings saved for each match
+        li Configuration/setup
+          ul
+            li Device settings (IP address, polling intervals, etc)
+            li Kiosk mode settings (display times)
+            li Match progress settings (colors, flare control)
+            li PractiScore server settings (name, Bonjour, IPv4/IPv6)
+            li UI settings (menu behavior, themeing)
+        li Kiosk mode
+          ul
+            li Interleaved display of scores, progress, and images
+            li Configurable display times for each
+            li Permit competitors to view scores
+            li Automatic resume after period of inactivity
+
+      p(style='width: 600px').
+        USPSA matches support all features above. Time-Plus and Time-Plus w/
+        Points matches have partial support. Other match types are being added
+        as the core software is being solidified.
+
+      p(style='width: 600px')
+        | PractiScore Match Manager (PMM) is written in 
+        a(href='http://nodejs.org') NodeJS
+        |  (server side) and Javascript (client side). By using a browser as
+        | the interface, PMM can be run on Mac, Linux or Windows platforms,
+        | and support multiple users.

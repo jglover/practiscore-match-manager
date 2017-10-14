@@ -1,0 +1,56 @@
+extends /mobile_layout
+
+block head
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='/theme/jquery.mobile/jquery.mobile.css')
+  link(rel='stylesheet', href='/stylesheets' + path + '.css')
+  script(src='/socket.io/socket.io.js')
+  script(src='/javascripts/libs/jquery.min.js')
+  script(src='/javascripts/libs/jquery.mobile.min.js')
+  script(src='/javascripts/libs/lodash.min.js')
+  script(src='/javascripts' + path + '.js')
+
+block content
+  div.hideondisconnect#content
+    div(data-role='page')#start
+      p Loading, please wait...
+
+    div(data-role='page')#stagePage
+      div(data-role='header', data-position='fixed')#stageHeader
+        h1#stageH1
+      ul(data-role='listview')#stageUL
+
+    div(data-role='page')#squadPage
+      div(data-role='header', data-position='fixed')#squadHeader
+        a(href='#stagePage', data-icon='back', data-rel='back') Back
+        h1#squadH1
+      ul(data-role='listview')#squadUL
+
+    div(data-role='page')#shootersPage
+      div(data-role='header', data-position='fixed')#shootersHeader
+        a(href='#squadPage', data-icon='back', data-rel='back') Back
+        h1#shootersH1
+          span#shootersDivStage
+          br
+          span#shootersDivSquad
+      ul(data-role='listview')#shootersUL
+
+    div(data-role='page')#scorePage
+      div(data-role='header', data-position='fixed')#scoreHeader
+        a(href='#shootersPage', data-icon='back', data-rel='back') Back
+        h1#scoreH1
+          span#scoreDivShooter
+          br
+          span#scoreDivStage
+      div(role='content').ui-content#scoreDiv
+
+    div(data-role='page')#noStagesPage
+      p Eeek! No stages defined for this match!
+
+    div(data-role='page')#noShootersPage
+      p Eeek! No shooters defined for this match!
+
+    div(data-role='page')#testPage
+      ul(data-role='listview')#testUL
+        li
+          a(href='#') This is a test

@@ -1,0 +1,49 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-match
+  h1.hideondisconnect#section Match Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      p
+      h3 Auto-fill database
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Update auto-fill database on match load/import/download
+            span(style='margin-top: 2px;').tright: div#ex-matchUpdateAutofill
+
+      p
+      h3 Name case correction
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Correct when loading from database
+            span(style='margin-top: 2px;').tright: div#ex-matchNameCaseDB
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Correct when loading from file
+            span(style='margin-top: 2px;').tright: div#ex-matchNameCaseFile
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Correct when importing
+            span(style='margin-top: 2px;').tright: div#ex-matchNameCaseImport
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Correct when downloading
+            span(style='margin-top: 2px;').tright: div#ex-matchNameCaseDownload
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Correct when syncing from device
+            span(style='margin-top: 2px;').tright: div#ex-matchNameCaseSync
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

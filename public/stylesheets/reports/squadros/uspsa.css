@@ -1,0 +1,96 @@
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+body {
+  font-family: Arial,Sans-Serif;
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#report {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.squad-list {
+  text-align: left;
+  list-style-type: none;
+}
+.squad-item {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.nobreak {
+  page-break-inside: avoid;
+}
+
+.shooter-list {
+}
+.shooter-item {
+  margin-left: 20px;
+  font-weight: normal;
+}
+
+.sh-deleted {
+  background-color: yellow;
+}
+.sh-dq {
+  background-color: red;
+}
+.sh-cro {
+  background-color: lightgreen;
+}
+.sh-ro {
+  background-color: lightgreen;
+}
+
+table.settings {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+}
+
+table.settings tr, table.settings td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+table.settings tr.even {
+  background: #fdfdfd;
+}
+
+table.settings tr.odd {
+  background: #f3f3f3;
+}
+
+table.settings td {
+  height: 27px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}

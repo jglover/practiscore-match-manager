@@ -1,0 +1,113 @@
+/*
+**  Match information table
+*/
+#content {
+  text-align: center;
+}
+
+h3 {
+  width: 600px;
+  margin: 0 auto 5px;
+  border-bottom: 1px solid #666;
+  padding: 0;
+  text-align: left;
+}
+
+table.config {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 550px;
+}
+
+table.config tr, table.config td {
+  border: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 560px;
+}
+
+table.config tr.even {
+  background: #fdfdfd;
+}
+
+table.config tr.odd {
+  background: #f3f3f3;
+}
+
+table.config tr.terror {
+  color: red;
+  display: none;
+}
+
+table.config td.tlabel {
+  width: 99%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+table.config td.tcontrol {
+  text-align: right;
+  overflow: hidden;
+}
+
+.configSaved, .configError {
+  color: red;
+  display: none;
+}
+
+.inputValid {
+  border: 2px solid green;
+}
+
+.inputInvalid {
+  border: 2px solid red;
+}
+
+.small-checkbox {
+  font-size: 0.75em !important;
+}
+
+.small-cpbutton {
+  font-size: 11px !important;
+}
+
+.ui-button-text {
+  font-size: inherit !important;
+}
+
+/*
+** Might be useful some day
+*/
+ul.leaders {
+  text-align: left;
+  max-width: 550px;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+ul.leaders li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content:
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . ";
+}
+
+ul.leaders span:first-child {
+  padding-right: 0.33em;
+  background: white;
+}
+
+ul.leaders span + span {
+  float: right;
+  padding-left: 0.33em;
+  background: white;
+}

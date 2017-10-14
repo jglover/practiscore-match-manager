@@ -1,0 +1,30 @@
+extends /layout_jq
+
+block content
+  div#help-page-id file-create
+  h1.hideondisconnect#section Create New Match
+  h2.hideondisconnect#matchname= matchname
+
+  div(style='display:none')#serverDisconnect
+    p Disconnected from server! Click 'Reload' to try to re-connect.
+
+  div.hideondisconnect#content
+    p.
+      Danger, Will Robinson! Clicking the 'New Match' button will delete the current match from
+      memory, and create a new, empty match. Please be sure this is what you really want to do!
+
+    p.
+      Once a new, empty match has been created, use the options under the 'Edit' menu to set the
+      match name &amp; date, add competitors and stages, and manage squads.
+
+    div(style='display:none')#notsavedDiv
+      p <b>Current match has not been saved! Maybe go save it first?</b>
+
+    div#matchTypesDDL
+    p
+
+    div#newmatchButtonDiv
+      input(type='button', value='Create New Match')#newmatchButton
+
+    p
+    div#messageDiv

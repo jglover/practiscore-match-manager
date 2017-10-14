@@ -1,0 +1,30 @@
+extends /layout
+
+block content
+  div#help-page-id edit-history-uspsa
+  h1.hideondisconnect#section View History
+  h2.hideondisconnect#matchname= matchname
+
+  div(style='text-align: center')#content
+    table(style='text-align: center')#historyTable
+      thead
+        tr
+          th.col-stagenumber Stage #
+          th.col-stagename Stage Name
+          th.col-memberid USPSA #
+          th.col-competitor Competitor
+          th.col-lastchange Last Change
+          th.col-device Device
+          th.col-edits Edits
+      tbody
+
+    p#historyMessage
+
+    div(style='display:none')#popupChanges
+      div#popupchanges-content
+
+    div(style='display:none')#popupDetails
+      div#popupdetails-content
+
+    div(style='display:none')#popupCompetitor
+      div#popupcompetitor-content

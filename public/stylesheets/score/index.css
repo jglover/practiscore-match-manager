@@ -1,0 +1,101 @@
+#content {
+ -webkit-touch-callout: none;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+}
+
+.ui-header .ui-title {
+  margin-left: 10%;
+  margin-right: 0%;
+}
+
+#shootersPage .ui-header {
+  height: 42.375px;
+}
+
+#shootersPage .ui-title {
+  padding-top: 0px;
+}
+
+#shootersDivStage {
+}
+
+#shootersDivSquad {
+  font-size: .8em;
+}
+
+#scorePage .ui-header {
+  height: 42.375px;
+}
+
+#scorePage .ui-title {
+  padding-top: 0px;
+}
+
+#scorePage .ui-content {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#scoreDivShooter {
+}
+
+#scoreDivStage {
+  font-size: .8em;
+}
+
+#scoreTable {
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+
+#scoreTable td {
+  border: 1px solid black;
+  width: 12.5%;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+#scoreTable .noborder {
+  border: none;
+}
+
+#scoreTable .zone-dummy {
+  margin-top: 100%;
+}
+
+#scoreTable .zone {
+  width: 65%;
+  height: 65%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#scoreTable .target-line {
+  text-align: right;
+}
+
+#scoreTable .disabled {
+  background: black;
+}
+
+#scoreTable .noscores {
+}
+
+#scoreTable .inprogress {
+  background: lightgrey;
+}
+
+#scoreTable .complete {
+  background: lime;
+}
+
+#scoreTable .error {
+  background: red;
+}

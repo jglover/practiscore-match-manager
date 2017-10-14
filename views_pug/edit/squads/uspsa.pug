@@ -1,0 +1,24 @@
+extends /layout
+
+block content
+  div#help-page-id edit-squads-uspsa
+  h1#section Manage Squads
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    button(style='display:none')#add-button Add new squad
+    p
+    div(style='display:none')#msgDiv
+      p#msg
+
+    div#squads
+    div#bottom
+
+    div(style='display:none', title='Add new squad')#popup
+      form
+        table.matchinfo
+          tr
+            td(align='right')
+              label(for='squadNumber') Squad Number:
+            td(align='left')
+              input(type='text', size=5, maxlength=5, autocomplete=off)#squadNumber

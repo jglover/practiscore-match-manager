@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    meta(name='google', content='notranslate')
+    meta(http-equiv='content-type', content='text/html;charset=utf-8')
+    title=title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets' + path + '.css')
+    link(rel='stylesheet', href='/javascripts/libs/jqwidgets/styles/jqx.base.css')
+    link(rel='stylesheet', href='/javascripts/libs/jqwidgets/styles/jqx.' + theme + '.css')
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/libs/sprintf.min.js')
+    script(src='/javascripts/libs/jquery.min.js')
+    script(src='/javascripts/libs/jqwidgets/jqx-all.js')
+    script(src='/javascripts/libs/lodash.min.js')
+    script(src='/javascripts/libs/moment.min.js')
+    script(src='/javascripts/menu.js')
+    script(src='/javascripts' + path + '.js')
+    style.
+      body {
+        font-family: Verdana;
+      }
+    block head
+
+  body
+    div(style='display: none;' theme='#{theme}' menuautoopen='#{menuautoopen}' inlineediting='#{inlineediting}' usecategorylist='#{usecategorylist}' pmmmatchtype='#{pmmmatchtype}')#pmmui
+    include /menu
+    include /disconnect
+    block content
+    div.no-print#copyright
+       hr#copyrightBreak
+       p#copyrightText Copyright (c) 2015 by JC Wren, all rights reserved.

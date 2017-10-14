@@ -1,0 +1,55 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/pmelib/textwidth.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+
+block content
+  div#help-page-id manage-sc-classifications
+  h1.hideondisconnect.no-print#section Steel Challenge Classifications
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect.no-print#content
+    div#inputFields
+      h3 SteelChallenge.com
+      table.config
+        tr.even
+          td
+            span(style='margin-top: 1px;').tleft Retrieve most recent classifications from website
+            span(style='margin-top: 0px;').tright: button(controltype='button' button-width='65')#button-get Get
+        tr(getmsg-tr style='display: none;')
+          td
+        tr(getmsg-tr style='display: none;')
+          td#getMsg
+
+      h3 Match
+      table.config
+        tr(no-classifications-fade).even
+          td
+            span(style='margin-top: 1px;').tleft Select the classification set for this match
+            span.tright: div(no-classifications-disable-ddl controltype='ddl')#dropdownlist-set
+        tr(no-classifications-fade).odd
+          td
+            span(style='margin-top: 1px;').tleft Apply selected update
+            span(style='margin-top: 0px;').tright: button(no-classifications-disable-button controltype='button' button-width='65')#button-apply Apply
+
+        tr.hideondisconnectex(update-tr style='display: none;')
+          td
+        tr.hideondisconnectex(update-tr style='display: none;')
+          td#updateMsg
+
+      p.hideondisconnectex(view-tr style='display: none;')
+        button(style='margin-right: 5px;' controltype='button' button-width='105')#button-screen.
+          On Screen
+        button(style='margin-left: 5px;' controltype='button' button-width='105')#button-print-preview.
+          Print Preview
+      p.hideondisconnectex(view-tr style='display: none;') (Printing is only supported when using the <a href='https://www.google.com/chrome/browser' target='_blank'>Chrome</a> browser)
+
+    div.hideondisconnectex#changesWindow
+      div
+        Division changes
+      div#changesGrid
+
+  span.no-print(style='visibility: hidden; font-size: 13px; font-family: Verdana, Arial, sans-serif; font-style: normal; font-weight: normal;')#secret-span
+
+  div.no-screen#printing

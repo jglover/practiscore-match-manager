@@ -1,0 +1,32 @@
+extends /layout_jq
+
+block content
+  div#help-page-id file-file-merge
+  h1.hideondisconnect#section Merge Match Fragment From PSC File
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    p (Only displaying .psc files with matching UUID)
+    div#fileGrid
+
+    div(style='display:none')#msgDiv
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li Merge this fragment
+
+  div(style='display: none;').hideondisconnectex#confirmMergeWindow
+    div(style='padding-top: 1px; padding-bottom: 0px;')
+      img(style='width: 24px; height: 24px; vertical-align: middle;' src='/images/red-triangle.png')
+      span(style='margin-left: 5px; position: relative; top: 2px;') Confirm Merge
+    div
+      div
+        | The current match has not been saved!
+      p
+      div
+        | Click 'OK' to merge the selected match file into the
+        | current match, or 'Cancel' to keep the current match as-is.
+      div
+        div(style='float: right; margin-top: 15px;')
+          button(style='margin-right: 10px;')#buttonMergeOK OK
+          button#buttonMergeCancel Cancel

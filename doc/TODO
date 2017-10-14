@@ -1,0 +1,50 @@
+Match
+  Make fields editable
+
+Competitors
+  Click to edit competitor
+  Enable/disable fields displayed
+  Draggable column widths?
+
+Squads
+  Implement context menu expand/collapse all
+  Add context menu icons
+  
+Stages
+
+Scores
+
+Progress
+
+Ping
+
+Config
+
+Explore
+
+Other
+  Need configuration options
+    IP addresses
+    Approved devices
+    Enable/disable PS server
+  Create match from scratch
+    Match basics
+    Stages
+    Competitors
+  Competitor database
+  Export match to EZWS
+  Save options (make changes to working copy)
+  Log of changes in match
+  Automatic, periodic polling of device(s)
+
+Miscellaneous
+  Why doesn't (function ($) {})(jQuery); work with tablesort.js in ping.js?
+
+Ideas
+  Too many areas of the program know explicitly about the structure of the 
+  match database. Without wrapping EVERYTHING in calls to localize to 
+  lib/practiscore.js, is there a better way to handle it? 
+
+  For now, using the data as read-only anywhere is acceptable, but anything
+  that alters data needs to be put in lib/practiscore.js and a function 
+  exposed to manipulate it.

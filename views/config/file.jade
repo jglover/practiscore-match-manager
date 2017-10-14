@@ -1,0 +1,31 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-filedirectory
+  h1.hideondisconnect#section File Directory Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 File Directories
+      table.config
+        tr.even
+          td
+            span.tleft Directory for PractiScore files
+            span.tright: input(style='padding-left: 3px;')#ec-fileDirectoryPSC
+        tr.odd
+          td
+            span.tleft Directory for Shoot'n-Score-It files
+            span.tright: input(style='padding-left: 3px;')#ec-fileDirectorySSI
+        tr.even
+          td
+            span.tleft Directory for EzWinScore files
+            span.tright: input(style='padding-left: 3px;')#ec-fileDirectoryEZWS
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

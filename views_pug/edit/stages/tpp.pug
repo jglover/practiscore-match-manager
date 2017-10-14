@@ -1,0 +1,26 @@
+extends /layout
+
+block content
+  div#help-page-id edit-stages-tpp
+  h1.hideondisconnect#section Add/Edit Stages
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    table(style='display:none')#stageTable
+      thead
+        tr
+          th.col-select Select
+          th.col-stagenum Stage #
+          th.col-stagename Stage Name
+          th.col-scoring Scoring
+          th.col-strings Strings
+          th.col-points Stage Points
+          th.col-classifier Classifier
+      tbody#stageTbody
+
+    p#stageMessage
+
+    div#buttonDiv
+      button#addButton Add Stage
+      div.buttonSpacer
+      button(disabled='disabled')#editButton Edit Stage

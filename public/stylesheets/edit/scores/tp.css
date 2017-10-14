@@ -1,0 +1,150 @@
+#content {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#errorMessage {
+  text-align: center;
+}
+
+/*
+**
+*/
+#individualDropdown {
+  text-align: center;
+}
+
+#individualShooterName {
+  text-align: center;
+  font-weight: bold;
+}
+
+/*
+ *
+*/
+#scoresTop {
+  text-align: center;
+}
+
+.scoresName, .scoresNo, .scoresClass, .scoresDivision {
+}
+
+.scoresPlace, .scoresRawTime, .scoresPenalties, .scoresBonuses, .scoresTime, .scoresDiff, .scoresStagePts, .scoresStagePct {
+  text-align: right;
+}
+
+/*
+ *
+*/
+#reviewTop {
+  text-align: center;
+}
+
+.reviewName, .reviewNo, .reviewClass, .reviewDivision, .reviewDNF, .reviewDQ {
+}
+
+.reviewSquad, .reviewRawTime, .reviewPenalties, .reviewBonuses, .reviewTime, .reviewStagePts {
+  text-align: right;
+}
+
+/*
+ *
+*/
+#combinedTop {
+  text-align: center;
+}
+
+.combinedName, .combinedNo, .combinedClass, .combinedDivision {
+}
+
+.combinedPlace, .combinedRawTime, .combinedPenalties, .combinedBonuses, .combinedTime, .combinedDiff, .combinedMatchPts, .combinedMatchPct {
+  text-align: right;
+}
+
+/*
+**
+*/
+table.popup-content-table-css {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table.popup-content-table-css th,
+table.popup-content-table-css td {
+  border: 1px solid black;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+#popup {
+  background-color: #fff;
+  border-radius: 15px;
+  color: #000;
+  display: none;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+#popup-content {
+  display: inline-block;
+  text-align: center;
+}
+
+table td.popup-content-table-penalty {
+  text-align: left;
+}
+
+table td.popup-content-table-time, table td.popup-content-table-total {
+  text-align: right;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.ui-dialog .ui-dialog-title {
+  text-align: center;
+  width: 100%;
+}
+
+.ui-widget {
+  font-size: 1.0em;
+}
+
+/*
+**
+*/
+.tablesorter {
+  font-size: 1.0em;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.tablesorter-jui thead td {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-header {
+  white-space: nowrap;
+  padding: 4px;
+}
+
+.tablesorter .tablesorter-filter-row {
+  padding: 2px;
+}
+
+.tablesorter .tablesorter-filter {
+  width: 80px;
+  padding: 1px;
+}
+
+.tablesorter-force-link {
+  cursor: pointer;
+  text-decoration: underline;
+}

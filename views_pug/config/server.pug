@@ -1,0 +1,40 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-server
+  h1.hideondisconnect#section PractiScore Server Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 Server
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Enable PractiScore server
+            span(style='margin-top: 2px;').tright: div#ex-practiscoreServer
+        tr.odd
+          td
+            span(style='margin-top: 2px;').tleft PractiScore name
+            span.tright: input(style='padding-left: 3px;')#ec-practiscoreName
+        tr.even
+          td
+            span(style='margin-top: 2px;').tleft PractiScore port number
+            span.tright: input(style='padding-left: 3px;')#ec-practiscorePort
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Announce PractiScore via mDNS/Bonjour
+            span(style='margin-top: 2px;').tright: div#ex-practiscoreAnnounce
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Use IPv6 instead of IPv4
+            span(style='margin-top: 2px;').tright: div#ex-practiscoreIPv6
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

@@ -1,0 +1,74 @@
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  * { margin: 0; padding: 0; }
+  svg > svg {page-break-after: always; }
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+/*
+**
+*/
+#body {
+  font-family: Arial,Sans-Serif;
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h3 {
+  width: 600px;
+  margin: 0 auto 5px;
+  border-bottom: 1px solid #666;
+  padding: 0;
+  text-align: left;
+}
+
+table.config {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 550px;
+}
+
+table.config tr, table.config td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 560px;
+}
+
+table.config tr.even {
+  background: #fdfdfd;
+}
+
+table.config tr.odd {
+  background: #f3f3f3;
+}
+
+table.config td {
+  height: 27px;
+  width: 600px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}

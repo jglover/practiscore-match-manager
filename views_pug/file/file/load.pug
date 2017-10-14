@@ -1,0 +1,45 @@
+extends /layout_jq
+
+block content
+  div#help-page-id file-file-load
+  h1.hideondisconnect#section Load Match From PSC File
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#fileGrid
+
+    div(style='display:none')#msgDiv
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li Load this match
+      li Delete this match
+
+  div(style='display: none;').hideondisconnectex#confirmLoadWindow
+    div(style='padding-top: 1px; padding-bottom: 0px;')
+      img(style='width: 24px; height: 24px; vertical-align: middle;' src='/images/red-triangle.png')
+      span(style='margin-left: 5px; position: relative; top: 2px;') Confirm Load
+    div
+      div
+        | The current match has not been saved!
+      p
+      div
+        | Click 'OK' to replace the current match with
+        | the selected match file, or 'Cancel' to keep it.
+      div
+        div(style='float: right; margin-top: 15px;')
+          button(style='margin-right: 10px;')#buttonLoadOK OK
+          button#buttonLoadCancel Cancel
+
+  div(style='display: none;').hideondisconnectex#confirmDeleteWindow
+    div(style='padding-top: 1px; padding-bottom: 0px;')
+      img(style='width: 24px; height: 24px; vertical-align: middle;' src='/images/red-triangle.png')
+      span(style='margin-left: 5px; position: relative; top: 2px;') Confirm Delete
+    div
+      div
+        | Click 'OK' to totally, completely, and irrevocably delete the selected match
+        | file, or 'Cancel' to keep it.
+      div
+        div(style='float: right; margin-top: 15px;')
+          button(style='margin-right: 10px;')#buttonDeleteOK OK
+          button#buttonDeleteCancel Cancel

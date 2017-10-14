@@ -1,0 +1,74 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/pmelib/common.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+
+block content
+  div#help-page-id reports-awards-uspsa
+  h1.hideondisconnect.no-print#section Awards Report
+  h2.hideondisconnect.no-print#matchname= matchname
+
+  div.hideondisconnect.no-print#content
+    div(style='display: none;').hideondisconnectex#settings
+      h3 Hosting Club Information
+      table.settings
+        tr.even
+          td
+            span(style='margin-top: 2px;').tleft Club Name
+            span(style='margin-right: -4px;').tright: input(type='text' controltype='textinput' textinput-width='300' textinput-maxlen='40' settings-save)#textinput-club-name
+        tr.odd
+          td
+            span(style='margin-top: 2px;').tleft USPSA Club Code
+            span(style='margin-right: -4px;').tright: input(type='text' controltype='textinput' textinput-width='60' textinput-maxlen='6' settings-save)#textinput-club-code
+
+      h3 Match Level
+      table.settings
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Nationals
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='1' settings-save)#radiobutton-match-level-l4
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Level III (Area)
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='1' settings-save)#radiobutton-match-level-l3
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Level II (State)
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='1' settings-save)#radiobutton-match-level-l2
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Level I (Local)
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='1' radiobutton-is-selected settings-save)#radiobutton-match-level-l1
+
+      include uspsa_l4.jade
+      include uspsa_l3.jade
+      include uspsa_l2.jade
+      include uspsa_l1.jade
+
+      h3 Output Format
+      table.settings
+        tr(no-sections-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Awards presentation format
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='2' radiobutton-is-selected no-sections-disable settings-save)#radiobutton-outputformat-presentation
+        tr(no-sections-fade).odd
+          td
+            span(style='margin-top: -1px;').tleft Cherokee IPSC payback spreadsheet format
+            span(style='margin-top: 2px;').tright: div(controltype='radiobutton' radiobutton-group='2' no-sections-disable settings-save)#radiobutton-outputformat-cgc
+
+      h3 Print Options
+      table.settings
+        tr(no-sections-fade).even
+          td
+            span(style='margin-top: -1px;').tleft Suppress 'no qualifying entries' sections
+            span(style='margin-top: 2px;').tright: div(controltype='checkbox' no-sections-disable settings-save)#checkbox-suppress-noqualifying
+
+      p
+        button(style='margin-right: 5px;' controltype='button' button-width='105')#button-screen.
+          On Screen
+        button(style='margin-left: 5px;' controltype='button' button-width='105')#button-print-preview.
+          Print Preview
+      p (Printing is only supported when using the <a href='https://www.google.com/chrome/browser' target='_blank'>Chrome</a> browser)
+
+  div.no-screen#awards

@@ -1,0 +1,40 @@
+extends /layout_jq
+
+block content
+  div#help-page-id edit-classes
+  h1.hideondisconnect#section Add/Edit Classes
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#classesGrid
+
+  div(style='display: none;').hideondisconnectex#popupEdit
+    div Window Title
+    div(style='overflow: hidden;')
+      table
+        tr
+          td.tlabel Name:
+          td.tinput: input(style='padding-left: 3px;')#ec-pmmname
+        tr
+          td.tlabel Abbreviation:
+          td.tinput: input(style='padding-left: 3px;')#ec-psname
+        tr
+          td.tlabel Enabled:
+          td.tinput: div#ec-enabled
+
+      p
+      div(style='float: right')
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-cancelButton Cancel
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li#contextEditClass Edit This Class (#<span id='contextEditClassNum'>0</span>)
+      li#contextAddClass Add New Class (#<span id='contextAddClassNum'>0</span>)
+      li#contextDeleteClass Delete This Class (#<span id='contextDeleteClassNum'>0</span>)
+
+      li Edit Mode
+        ul(style='width: 60px;')
+          li#contextEditModeInline Inline
+          li#contextEditModePopup Popup

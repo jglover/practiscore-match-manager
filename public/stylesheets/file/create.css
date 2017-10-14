@@ -1,0 +1,18 @@
+#content {
+  width: 600px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+#notsavedDiv, #newmatchButtonDiv, #messageDiv {
+  text-align: center;
+}
+
+#matchTypesDDL {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#message {
+  color: red;
+}

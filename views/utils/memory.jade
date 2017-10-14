@@ -1,0 +1,38 @@
+extends /layout
+
+block content
+  div#help-page-id utils-memory
+  h1.hideondisconnect#section Memory Usage
+
+  div.hideondisconnect#content
+    div#memoryDiv
+      p#lastUpdate
+      table#usage
+        thead
+          tr
+            th Type
+            th Maximum
+            th Current
+            th Minimum
+        tbody
+          tr
+            td RSS
+            td#rssMax
+            td#rssCur
+            td#rssMin
+          tr
+            td Heap Total
+            td#heapTotalMax
+            td#heapTotalCur
+            td#heapTotalMin
+          tr
+            td Heap Used
+            td#heapUsedMax
+            td#heapUsedCur
+            td#heapUsedMin
+          tr
+            td Heap Free
+            td#heapFreeMax
+            td#heapFreeCur
+            td#heapFreeMin
+      p (Updated every 10 seconds)

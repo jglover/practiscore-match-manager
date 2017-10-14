@@ -1,0 +1,9 @@
+#content {
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+}
+
+#saveForm {
+  display: inline-block;
+}

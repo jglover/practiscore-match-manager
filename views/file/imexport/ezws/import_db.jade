@@ -1,0 +1,40 @@
+extends /layout
+
+block content
+  div#help-page-id file-imexport-ezws-importdb
+  h1.hideondisconnect#section Import Match From EzWinScore Database
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    - if (platform !== 'win32')
+      p Sorry, but importing an EzWinScore database only works under Windows :(
+    - else
+      div(style='display:none')#systemErrorDiv
+        p#systemError Error!
+
+      div#scanningDiv
+        p Scanning for files...
+
+      div(style='display:none')#noFilesDiv
+        p No Shoot'n-Score-It files found.
+
+      div(style='display:none')#matchFilesDiv
+        table(style='display:none')#matchFilesTable
+          thead
+            tr
+              th Select
+              th Name
+              th Date
+              th Type
+              th Last Modified
+              th File Name
+          tbody
+
+        div(style='display:none')#loadMessageDiv
+          p#loadMessage <b>Current match has not been saved! Maybe go save it first?</b>
+
+        p
+
+        div#loadButtonDiv
+          button(style='display:none', disabled='disabled')#loadButton.
+            Load Match

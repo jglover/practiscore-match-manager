@@ -1,0 +1,44 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-kiosk
+  h1.hideondisconnect#section Kiosk Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 Kiosk
+      table.config
+        tr.even
+          td
+            span.tleft Number of sequential vendor images
+            span.tright: input(style='padding-left: 3px;')#ec-kioskVendorImageCount
+        tr.odd
+          td
+            span.tleft Number of seconds to display vendor image
+            span.tright: input(style='padding-left: 3px;')#ec-kioskVendorDisplayTime
+        tr.even
+          td
+            span.tleft Number of seconds to display match progress
+            span.tright: input(style='padding-left: 3px;')#ec-kioskProgressDisplayTime
+        tr.odd
+          td
+            span.tleft Number of seconds to display stage results
+            span.tright: input(style='padding-left: 3px;')#ec-kioskStageDisplayTime
+        tr.even
+          td
+            span.tleft Number of seconds idle before resuming
+            span.tright: input(style='padding-left: 3px;')#ec-kioskIdleTime
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Allow right-click to interrupt kiosk display
+            span(style='margin-top: 2px;').tright: div#ex-kioskRightClickOK
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

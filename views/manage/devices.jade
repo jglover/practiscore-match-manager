@@ -1,0 +1,46 @@
+extends /layout_jq
+
+append head
+  script(src='/javascripts/pmelib/textwidth.js')
+
+block content
+  div#help-page-id manage-devices
+  h1.hideondisconnect#section Sync
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#devicesGrid
+
+    div(style='display: none; margin-top: 16px;')#clientMsg
+    div(style='display: none; margin-top: 16px;')#clientTime
+
+  div(style='display: none;').hideondisconnectex#contextMenu
+    ul
+      li#contextDeviceDetails Show device details
+      li#contextDevicePoll Poll this device
+      li#contextDeviceLogs Get logs from this device
+      li#contextDeviceSync Sync from this device
+      li#contextDeviceAutopoll <span id='contextDeviceAutopollState'>Enable</span> auto-poll
+      li#contextDeviceHide Hide this device
+      li#contextDeviceUnhideAll Unhide all devices
+
+  div(style='display: none;').hideondisconnectex#popupDeviceInfo
+    div Squad Distribution
+    div
+      p(style='text-align: center;') Not yet implemented
+
+  div(style='display: none;').hideondisconnectex#confirmSyncWindow
+    div(style='padding-top: 1px; padding-bottom: 0px;')
+      img(style='width: 24px; height: 24px; vertical-align: middle;' src='/images/red-triangle.png')
+      span(style='margin-left: 5px; position: relative; top: 2px;') Confirm Sync
+    div
+      div.
+        Syncing will replace the current match in PMM
+        with the match from this device. Are you sure
+        you want to do this?
+      div
+        div(style='float: right; margin-top: 15px;')
+          button(style='margin-right: 10px;')#buttonSyncOK OK
+          button#buttonSyncCancel Cancel
+
+  span(style='visibility: hidden; font-size: 13px; font-family: Verdana, Arial, sans-serif; font-style: normal; font-weight: normal;')#secret-span

@@ -1,0 +1,17 @@
+extends /layout
+
+append head
+  script(src='/javascripts/kiosk/menu.js')
+
+block content
+  div#help-page-id kiosk
+  h1.hideondisconnect#section Kiosk Options
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    p
+      a(href='/kiosk/progress?kiosk=1') Match Progress
+      |  (or press 'M')
+    p
+      a(href='/kiosk/scores?kiosk=1') Match Scores
+      |  (or press 'S')

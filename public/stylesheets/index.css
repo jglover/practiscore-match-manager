@@ -1,0 +1,9 @@
+#content {
+  width: 100%;
+  text-align: center;
+}
+
+#help {
+  text-align: left;
+  display: inline-block;
+}

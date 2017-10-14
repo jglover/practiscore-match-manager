@@ -1,0 +1,17 @@
+#content {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+#error {
+  color: red;
+}
+
+#stages {
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}

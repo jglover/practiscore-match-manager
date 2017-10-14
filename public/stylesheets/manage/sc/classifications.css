@@ -1,0 +1,104 @@
+/*
+**  When printing, we don't want to print the header rules (<hr>) that we
+**  use when display in the browser.
+*/
+@media all { display: none; }
+
+@media screen {
+  .no-screen, .no-screen * { display: none !important; }
+}
+
+@media print {
+  .page-break { display: block; page-break-after: always; }
+  .no-print, .no-print * { display: none !important; }
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h3 {
+  width: 600px;
+  margin: 0 auto 5px;
+  border-bottom: 1px solid #666;
+  padding: 0;
+  text-align: left;
+}
+
+table.config {
+  border-collapse: collapse;
+  border: none;
+  display: inline-block;
+  width: 550px;
+}
+
+table.config tr, table.config td {
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 560px;
+}
+
+table.config tr.even {
+  background: #fdfdfd;
+}
+
+table.config tr.odd {
+  background: #f3f3f3;
+}
+
+table.config td {
+  height: 27px;
+  width: 600px;
+}
+
+.tleft {
+  margin-top: 2px;
+  float: left;
+}
+
+.tright {
+  float: right;
+}
+
+table.changes {
+  margin: 0 auto;
+}
+
+table.changes tr, table.changes td {
+  white-space: nowrap;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+table.print {
+  font-family: Arial,Sans-Serif;
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table.print tr, table.print th, table.print td {
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  white-space: nowrap;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+table.print th {
+  text-align: center;
+}
+table.print td {
+  text-align: left;
+}

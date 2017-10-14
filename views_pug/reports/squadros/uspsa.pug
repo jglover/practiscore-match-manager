@@ -1,0 +1,22 @@
+extends /layout_jq
+
+block content
+  div#help-page-id reports-squadros-uspsa
+  h1.hideondisconnect.no-print#section Squad RO/CRO Report
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div#report
+
+    div.no-print#print
+      table.settings
+        tr
+          td
+            span(style='margin-top: -1px;').tleft Include deleted competitors
+            span(style='margin-top: 2px; margin-left: 4px;').tright: div(controltype='checkbox')#checkbox-includedeleted
+      p
+        button(controltype='button' button-width='105')#button-print-preview.
+          Print Preview
+      p
+        | (Printing is only supported when using the <a href='https://www.google.com/chrome/browser' target='_blank'>Chrome</a> browser)
+        | ("Background graphics" must be checked to show colors)

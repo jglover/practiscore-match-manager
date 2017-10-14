@@ -1,0 +1,25 @@
+extends /layout
+
+append head
+  script(src='/javascripts/libs/jquery.history.min.js')
+  script(src='/javascripts/pmelib/common.js')
+  script(src='/javascripts/pmelib/' + pmmmatchtypejs)
+
+block content
+  div#help-page-id edit-scores-tpp
+  h1#section Edit Scores
+  h2.hideondisconnect#matchname= matchname
+
+  div#content
+    #scores
+
+    div(style='display:none')#popup
+      div#popup-content
+        table#popup-content-table.popup-content-table-css
+          thead
+            tr
+              th Penalty
+              th Time
+              th Number Of
+              th Total
+          tbody

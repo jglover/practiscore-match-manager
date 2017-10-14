@@ -1,0 +1,263 @@
+extends /layout_jq
+
+block content
+  div#help-page-id manage-checkin
+  h1.hideondisconnect#section Competitor Check-In
+  h2.hideondisconnect#matchname= matchname
+
+  div.hideondisconnect#content
+    div(style='margin-top: 3px; float: left;')
+      input(type='search')#input-search
+      div(style='margin-top: 5px;')#listbox-competitors
+
+    div(style='margin-left: 10px; float: left;')
+      div#tabs-center
+        ul
+          li(style='margin-left: 3px;') Competitor
+          li Squads
+          li Options
+        div#tab-competitor
+          div(style='overflow: hidden;')#form-competitor
+            table(style='margin-top: 5px;')
+              tr
+                td.tlabel Last Name:
+                td.tinput: input(tab-competitor-input style='padding-left: 3px;')#ec-sh-ln
+                td.tspace
+                td.tlabel First Name:
+                td.tinput: input(tab-competitor-input style='padding-left: 3px;')#ec-sh-fn
+                td.tspace
+                td(delete-if-not-uspsa).tlabel USPSA:
+                td(delete-if-not-sc).tlabel SCSA:
+                td(delete-if-not-uspsasc).tinput
+                  div(tab-competitor-dropdownlist style='float: left;')#ec-sh-id-prefix
+                  input(tab-competitor-input style='padding-left: 3px; float: left; margin-left: 4px;')#ec-sh-id-num
+                td(delete-if-uspsasc).tlabel Member #:
+                td(delete-if-uspsasc).tinput: input(tab-competitor-input style='padding-left: 3px;')#ec-sh-id
+              tr
+                td.tlabel Division:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-dvp
+                td.tspace
+                td(delete-if-not-uspsa).tlabel Power Factor:
+                td(delete-if-not-uspsa).input: div(tab-competitor-dropdownlist)#ec-sh-pf
+                td(delete-if-not-uspsa).tspace
+                td.tlabel Class:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-grd
+              tr
+                td.tlabel Squad:
+                td.tinput: div(tab-competitor-numberinput)#ec-sh-sqd
+                td.tspace
+                td(delete-if-not-ucl).tlabel Categories:
+                td(delete-if-not-ucl).tinput: div(tab-competitor-dropdownchecklist)#ec-sh-ctgs
+                td(delete-if-ucl).tlabel Age:
+                td(delete-if-ucl).tinput: div(tab-competitor-dropdownlist)#ec-sh-age
+                td(delete-if-ucl).tspace
+                td(delete-if-ucl).tlabel Gender:
+                td(delete-if-ucl).tinput: div(tab-competitor-dropdownlist)#ec-sh-gen
+              tr(delete-if-ucl)
+                td.tlabel Law:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-law
+                td.tspace
+                td.tlabel Military:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-mil
+                td.tspace
+                td.tlabel Foreign:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-frn
+              tr
+                td.tlabel Walk-On:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-wlk
+                td.tspace
+                td.tlabel DQ:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-dq
+                td.tspace
+                td.tlabel Deleted:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-del
+              tr
+                td(delete-if-not-uspsa).tlabel EZWS #:
+                td(delete-if-not-uspsa).tinput: input(tab-competitor-input style='padding-left: 3px;')#ec-sh-num
+                td(delete-if-not-uspsa).tspace
+                td.tlabel Log To Email:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-lge
+                td.tspace
+                td.tlabel Log To SMS:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-lgp
+              tr
+                td.tlabel Phone:
+                td.tinput: div(tab-competitor-maskedinput style='padding-left: 3px;')#ec-sh-ph
+                td.tspace
+                td.tlabel Email:
+                td(colspan=4).tinput: input(tab-competitor-input style='padding-left: 3px;')#ec-sh-eml
+              tr
+                td.tlabel Address 1:
+                td.tinput: input(style='padding-left: 3px;')#ec-sh-addr1
+                td.tspace
+                td.tlabel Address 2:
+                td(colspan=4).tinput: input(style='padding-left: 3px;')#ec-sh-addr2
+                td.tspace
+              tr
+                td.tlabel City:
+                td.tinput: input(tab-competitor-input style='padding-left: 3px;')#ec-sh-city
+                td.tspace
+                td.tlabel State:
+                td.tinput: div(tab-competitor-dropdownlist)#ec-sh-st
+                td.tspace
+                td.tlabel ZIP Code:
+                td.tinput: div(tab-competitor-maskedinput style='padding-left: 3px;')#ec-sh-zipcode
+                td.tspace
+
+            p
+            div(style='text-align: center;')
+              button(tab-competitor-button style='margin-left: 4px;')#ec-new New
+              button(tab-competitor-button style='margin-left: 4px;')#ec-cancel Cancel
+              button(tab-competitor-button style='margin-left: 4px;')#ec-save Save
+
+            p
+            div(style='hidden: true; text-align: center;')#status-message
+
+        div#tab-squads
+          div(style='z-index: 100;')#jqxLoader
+          div(style='margin-left: 10px; margin-top: 10px; float: left;')#panel-squads-left
+            div(style='border: none;')#tree-squads-left
+
+          div(style='margin-left: 10px; margin-top: 10px; float: left;')#panel-squads-right
+            div(style='border: none;')#tree-squads-right
+
+        div#tab-options
+          div(style='margin-top: 10px; margin-left: 10px; overflow: hidden;')#form-options
+            table
+              tr
+                td.tlabel Sort competitors by:
+                td.tinput: div(controltype='dropdownlist' config-save style='margin-left: 2px;')#dropdownlist-options-sort-key
+              tr
+                td.tlabel Sort names in reverse order:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-sort-reverse
+              tr
+                td &nbsp;
+                td &nbsp;
+              tr
+                td.tlabel Hide deleted competitors:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-hide-deleted
+              tr
+                td.tlabel Hide present competitors:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-hide-present
+              tr
+                td &nbsp;
+                td &nbsp;
+              tr
+                td.tlabel Multiple squads expanded on squads tab:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-squads-multipleopen
+              tr
+                td.tlabel Show only selected squads in squads tab:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-squads-useshowlist
+              tr(options-squads-useshowlist-fade)
+                td.tlabel Selected squads list:
+                td.tinput: input(controltype='input' config-save style='margin-left: 2px;')#input-options-squads-showlist
+              tr(options-squads-useshowlist-fade)
+                td.tlabel Hide competitors in unselected squads:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-squads-hideunshown
+              tr
+                td &nbsp;
+                td &nbsp;
+              tr
+                td.tlabel Disable auto-complete for new shooters:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-competitor-noautocomplete
+              tr
+                td &nbsp;
+                td &nbsp;
+              tr
+                td.tlabel Hide accounting panel:
+                td.tinput: div(controltype='checkbox' config-save style='margin-top: 3px;')#checkbox-options-accounting-panelhide
+      div(style='text-align: left; margin-top: 10px; white-space: nowrap;')#window-summary
+        div#window-summary-header
+          span Summary
+        div#window-summary-content
+          table(style='margin-left: 5px;')
+            tr
+              td(style='vertical-align: top;')
+                table(style='text-align: right;')
+                  tr
+                    td(colspan=2 style='font-weight: bold; text-align: center; font-size: larger; padding-bottom: 5px;') Competitors
+                  tr
+                    td In Match:
+                    td#summaryCompetitorsTotal
+                  tr
+                    td Present:
+                    td#summaryCompetitorsPresent
+                  tr
+                    td Not Present:
+                    td#summaryCompetitorsNotPresent
+                  tr
+                    td Deleted:
+                    td#summaryCompetitorsDeleted
+                  tr
+                    td Not Deleted:
+                    td#summaryCompetitorsNotDeleted
+              td(style='vertical-align: top; padding-left: 40px;')
+                table(style='text-align: right;')
+                  tr
+                    td(colspan=2 style='font-weight: bold; text-align: center; font-size: larger; padding-bottom: 5px;') Squad Sizes
+                  tr
+                    td Smallest:
+                    td#summarySquadSmallest
+                  tr
+                    td Largest:
+                    td#summarySquadLargest
+                  tr
+                    td Delta:
+                    td#summarySquadDelta
+                  tr
+                    td Average:
+                    td#summarySquadAverage
+              td(style='vertical-align: top; padding-left: 40px;')
+                table(style='text-align: right;')#summarySquadSpread
+
+    div(style='margin-left: 10px; float: left;')
+      div(style='text-align: left;')#panel-practiscore
+        div(style="outline: none; height: 28px; position: relative; left: 0px; top: 0px;")#header-practiscore
+          div(style='margin-top: 5px; margin-left: 8px;') Practiscore
+        div(panel-practiscore-checkbox style='margin-left: 10px; margin-top: 3px;')#ec-sh-here
+          span Present
+        div(panel-practiscore-checkbox style='margin-left: 10px;')#ec-sh-paid
+          span Paid
+        div(panel-practiscore-checkbox style='margin-left: 10px;')#ec-sh-staff
+          span Staff
+
+      div(style='text-align: left; margin-top: 10px; display: none;')#panel-accounting
+        div(style="outline: none; height: 28px; position: relative; left: 0px; top: 0px;")#header-accounting
+          div(style='margin-top: 5px; margin-left: 8px;') Accounting
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px; margin-top: 3px;')#ec-amount-firstuspsa
+          span 1st-time USPSA ($5)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-minor
+          span Minor (< 15, $0)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-junior
+          span Junior (15-18, $5)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-member
+          span Member ($15)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-family
+          span Family ($15)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-leomil
+          span LEO/Military ($15)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-win
+          span Winner ($15, $10, $5, $0)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-drawing
+          span Drawing ($0)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-2ndgunplebe
+          span 2nd Gun ($15)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-2ndgunmember
+          span 2nd Gun, Member ($10)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-other
+          span Other ($?)
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-amount style='margin-left: 10px;')#ec-amount-staff
+          span Staff ($0)
+
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-paid style='margin-left: 10px; margin-top: 10px;')#ec-paid-20
+          span(style='float: right;') $20 Received
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-paid style='margin-left: 10px;')#ec-paid-15
+          span(style='float: right;') $15 Received
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-paid style='margin-left: 10px;')#ec-paid-10
+          span(style='float: right;') $10 Received
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-paid style='margin-left: 10px;')#ec-paid-5
+          span(style='float: right;') $5 Received
+        div(panel-accounting-radiobutton panel-accounting-radiobutton-paid style='margin-left: 10px;')#ec-paid-0
+          span(style='float: right;') $0 Received
+
+    div(style='clear: both;')

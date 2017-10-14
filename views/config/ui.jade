@@ -1,0 +1,42 @@
+extends /layout_jq
+
+block content
+  div#help-page-id config-ui
+  h1.hideondisconnect#section User Interface Configuration
+
+  div.hideondisconnect#content
+    p.textblock
+      |This describes what goes here
+
+    div#inputFields
+      h3 Menus
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Prevent menus from auto-opening
+            span(style='margin-top: 2px;').tright: div#ex-pmmuiMenuAutoOpen
+
+      h3 Editing
+      table.config
+        tr.even
+          td
+            span(style='margin-top: -1px;').tleft Default editing mode is in-line (instead of popup)
+            span(style='margin-top: 2px;').tright: div#ex-pmmuiInlineEditing
+        tr.odd
+          td
+            span(style='margin-top: -1px;').tleft Use category list (instead of age/female/law/military/foreign)
+            span(style='margin-top: 2px;').tright: div#ex-pmmuiUseCategoryList
+
+      h3 Theme
+      table.config
+        tr.even
+          td
+            span(style='margin-top: 2px;').tleft Theme
+            span.tright: div#ec-pmmuiTheme
+
+      p
+        button(style='margin-left: 4px;')#ec-resetButton Reset
+        button(style='margin-left: 4px;')#ec-saveButton Save
+
+    p#msg
+    p#errmsg

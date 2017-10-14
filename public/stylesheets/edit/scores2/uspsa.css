@@ -1,0 +1,29 @@
+#content {
+  overflow: hidden;
+}
+
+#menuGrid {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#indresGrid {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#indresDropdownDiv {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.total {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right: 2px;
+  margin-left: 4px;
+  margin-top: 0px;
+}
