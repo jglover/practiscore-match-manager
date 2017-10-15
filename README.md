@@ -78,6 +78,23 @@ The awards reports was particulary useful in the Area 6 matches, and produced
 complete reports within a few seconds of the match ending (far better than
 anything EZWinScore supports). 
 
+One of the cooler features, and also one of the first implemented, is the match
+completion status. This was subsequently absorbed into the iOS version of
+PractiScore (and maybe the Android version, although I rarely used it). The
+match status page displays a grid indicating the completion status of each
+stage and squad in the match, including missing scores. This, combined with
+automatic polling of the scoring devices, allows a match director to have a
+near real-time view of the progress of the match.
+
+Another bit that I particularly like is the competitor check-in screen. This
+tracks which competitors have checked in, squad availability, payment status,
+display of all people on a squad, rapidly change divisions, etc. This was
+particularly useful for local matches. We allow people to register online or as
+a walk-up. About 15% of the people who register online never show up, and we
+have about a 15% walk-up rate. As a result, we're never sure how full a squad
+will actually be. This page allows us to rapidly balance squads at the close of
+registration.
+
 Somewhere around February 2016 I got burned out scoring matches. As a result, I
 also lost interest in continuing development on this app. Rather than just
 letting this software rot on a disk somewhere, I thought I'd put it up on
